@@ -2,6 +2,7 @@ package com.sun.mystudy;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.sun.util.MobileConfig;
@@ -29,10 +30,10 @@ public class RequestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
 
-//        init();
-//        init2();
-        init3();
-        init4();
+        init();
+        init2();
+//        init3();
+//        init4();
         String login =
                 "http://phone."
                         + "hainantaohua"
@@ -95,6 +96,8 @@ public class RequestActivity extends AppCompatActivity {
                .add("account","18555556688")
                .add("pwd", Utils.encryption("asd123"))
                .build();
+        System.out.println(Utils.encryption("asd123"));
+
 
         Request request = new Request.Builder().url(MY_LOGIN).post(requestBody).build();
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -108,32 +111,37 @@ public class RequestActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String json = response.body().string();
+                System.out.println( "head"+response.headers().toString());
                 System.out.println(json);
             }
         });
     }
 
+    //    PHPSESSID=p4f8c37bgfe5qvciuij9ng95j1
     private void init() {
         StringBuilder sb = new StringBuilder(MY_URl);
         MobileConfig config = MobileConfig.getMobileConfig(this);
         Toast.makeText(RequestActivity.this, "init", Toast.LENGTH_SHORT).show();
 
-        Request request = null;
-        try {
-            request = new Request.Builder().url(MY_LOGIN)
-                    .addHeader("account","18555556688")
-                    .addHeader("pwd", Utils.encryption("asd123"))
-                    .addHeader("udid", config.getIemi())
-                    .addHeader("system_name", config.getOS())
-                    .addHeader("system_version", config.getMobileOsVersion())
-                    .addHeader("platform", URLEncoder.encode(config.getMobileModel(), "utf-8"))
-                    .addHeader("carrier", URLEncoder.encode(config.getSimOperatorName(), "utf-8"))
-                    .addHeader("app_version", config.getPkgVerCode() + "")
-                    .addHeader("app_channel", config.getCurrMarketName())
-                    .build();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+//        Request request = null;
+//        try {
+//            request = new Request.Builder().url(MY_LOGIN)
+//                    .addHeader("account","18555556688")
+//                    .addHeader("pwd", Utils.encryption("asd123"))
+//                    .addHeader("udid", config.getIemi())
+//                    .addHeader("system_name", config.getOS())
+//                    .addHeader("system_version", config.getMobileOsVersion())
+//                    .addHeader("platform", URLEncoder.encode(config.getMobileModel(), "utf-8"))
+//                    .addHeader("carrier", URLEncoder.encode(config.getSimOperatorName(), "utf-8"))
+//                    .addHeader("app_version", config.getPkgVerCode() + "")
+//                    .addHeader("app_channel", config.getCurrMarketName())
+//                    .build();
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
+        Request request = new Request.Builder().url(MY_URl)
+                .addHeader("cookie", "PHPSESSID=s0vrkcpldbbu6gtco70eescjt0")
+                .build();
         OkHttpClient okHttpClient = new OkHttpClient();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
@@ -146,7 +154,7 @@ public class RequestActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 Toast.makeText(RequestActivity.this, "访问成功了", Toast.LENGTH_SHORT).show();
                 String json = response.body().string();
-                System.out.println(json);
+                System.out.println("init" + json);
 
             }
         });
