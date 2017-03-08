@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.sun.util.Utils;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int mPhoneState;
     private int mWrite_storage;
     private int mRead_storage;
+    private Button mScroll_list;
+    private Button mCommon_listview;
+    private Button mList_itemClick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mRefresh.setOnClickListener(this);
         mNetRequest = (Button) findViewById(R.id.net_request);
         mNetRequest.setOnClickListener(this);
+        mScroll_list = (Button) findViewById(R.id.scroll_listview);
+        mScroll_list.setOnClickListener(this);
+        mCommon_listview = (Button) findViewById(R.id.common_listview);
+        mCommon_listview.setOnClickListener(this);
+        mList_itemClick = (Button) findViewById(R.id.itemClick_list);
+        mList_itemClick.setOnClickListener(this);
+        findViewById(R.id.listview_page).setOnClickListener(this);
+        findViewById(R.id.popupwindow).setOnClickListener(this);
+        findViewById(R.id.common_radiobutton).setOnClickListener(this);
+        findViewById(R.id.empty_radiobutton).setOnClickListener(this);
+        findViewById(R.id.spinner).setOnClickListener(this);
     }
 
     @Override
@@ -73,6 +88,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.net_request:
                 startActivity(new Intent(this, RequestActivity.class));
+                break;
+            case R.id.scroll_listview:
+                startActivity(new Intent(this, ScrollviewAndListviewActivity.class));
+                break;
+            case R.id.common_listview:
+
+                break;
+            case (R.id.itemClick_list):
+                startActivity(new Intent(this, ListViewItemClick.class));
+                break;
+            case R.id.listview_page:
+                startActivity(new Intent(this, ListViewPageActivity.class));
+                break;
+            case R.id.popupwindow:
+                startActivity(new Intent(this, PopupWindowActivity.class));
+                break;
+            case R.id.common_radiobutton:
+                startActivity(new Intent(this,CommonRadiobuttonActivity.class));
+                break;
+            case R.id.empty_radiobutton:
+                startActivity(new Intent(this, EmptyRadiobuttonActivity.class));
+                break;
+            case R.id.spinner:
+                startActivity(new Intent(this, SpinnerActivity.class));
                 break;
         }
     }
