@@ -118,6 +118,7 @@ public class RequestActivity extends AppCompatActivity {
     }
 
     //    PHPSESSID=p4f8c37bgfe5qvciuij9ng95j1
+//    加密密码  bfd59291e825b5f2bbf1eb76569f8fe7
     private void init() {
         StringBuilder sb = new StringBuilder(MY_URl);
         MobileConfig config = MobileConfig.getMobileConfig(this);

@@ -5,9 +5,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,6 +27,8 @@ public class RefreshActivity extends AppCompatActivity {
     private PullToRefreshListView mRefreshListView;
     private List<RefreshData> dataList = new ArrayList<>();
     private MyAdapter mAdapter;
+    private int down = 1;
+    private int up = 1;
 
     Handler mHandler = new Handler() {
         @Override
@@ -39,7 +42,6 @@ public class RefreshActivity extends AppCompatActivity {
             }
         }
     };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,10 +62,23 @@ public class RefreshActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        findViewById(R.id.text_refresh).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mRefreshListView.setRefreshing(true);
+                System.out.println("点击了button");
+            }
+        });
         mRefreshListView = (PullToRefreshListView) findViewById(R.id.pulltorefrsh);
 
         mAdapter = new MyAdapter();
         mRefreshListView.setAdapter(mAdapter);
+        mRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println("点击了listview条目" + position);
+            }
+        });
 
         mRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
         initRefresh();
@@ -73,9 +88,10 @@ public class RefreshActivity extends AppCompatActivity {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
                 RefreshData data = new RefreshData();
-                data.first = "下拉刷新first";
-                data.second = "下拉刷新second";
+                data.first = "下拉刷新" + down;
+                data.second = "下拉刷新" + down;
                 dataList.add(0, data);
+                down++;
 //                try {
 //                    Thread.sleep(1000);
 //                } catch (InterruptedException e) {
@@ -90,9 +106,10 @@ public class RefreshActivity extends AppCompatActivity {
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
                 RefreshData data = new RefreshData();
-                data.first = "上拉加载+first";
-                data.second = "上拉加载second";
+                data.first = "上拉加载" + up;
+                data.second = "上拉加载" + up;
                 dataList.add(data);
+                up++;
 //                try {
 //                    Thread.sleep(1000);
 //                    mRefreshListView.onRefreshComplete();
@@ -106,7 +123,6 @@ public class RefreshActivity extends AppCompatActivity {
                 mHandler.sendEmptyMessageDelayed(0, 1000);
             }
         });
-
     }
 
     private void initRefresh() {
@@ -130,6 +146,7 @@ public class RefreshActivity extends AppCompatActivity {
             } catch (InterruptedException e) {
             }
             return null;
+
         }
 
         @Override
@@ -180,5 +197,11 @@ public class RefreshActivity extends AppCompatActivity {
             TextView second;
         }
     }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
+    }
+
 
 }
