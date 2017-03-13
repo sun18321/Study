@@ -72,6 +72,8 @@
         //key:开发者申请的Key
         <activity android:name=".SpinnerActivity">
         </activity>
+        <activity android:name=".RecyclerviewActivity">
+        </activity>
     </application>
 
 </manifest>

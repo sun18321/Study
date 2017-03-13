@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.common_radiobutton).setOnClickListener(this);
         findViewById(R.id.empty_radiobutton).setOnClickListener(this);
         findViewById(R.id.spinner).setOnClickListener(this);
+        findViewById(R.id.recyclerview).setOnClickListener(this);
     }
 
     @Override
@@ -113,6 +114,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.spinner:
                 startActivity(new Intent(this, SpinnerActivity.class));
                 break;
+            case R.id.recyclerview:
+                startActivity(new Intent(this, RecyclerviewActivity.class));
         }
     }
 }
