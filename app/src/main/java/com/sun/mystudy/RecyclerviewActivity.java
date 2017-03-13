@@ -4,11 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.handmark.pulltorefresh.library.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,14 +33,22 @@ public class RecyclerviewActivity extends AppCompatActivity {
 
     private void init() {
         for (int i = 'A'; i < 'z'; i++) {
-            list.add("" + (char) i);
+            list.add("哈哈哈" + (char) i);
         }
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-//        mRecyclerView.setAdapter(new MyAdapter());
-        mRecyclerView.setAdapter(new SecondAdapter(this, list));
+        mRecyclerView.setAdapter(new MyAdapter());
+//        SecondAdapter secondAdapter = new SecondAdapter(this, list);
+//        secondAdapter.setRcyclerListener(new SecondAdapter.RecyclerListener() {
+//            @Override
+//            public void doListen(int postion) {
+//
+//            }
+//        });
+//        mRecyclerView.setAdapter(secondAdapter);
 //        mRecyclerView.
+
     }
 
 
@@ -49,9 +60,19 @@ public class RecyclerviewActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(MyViewHolder holder, final int position) {
+        public void onBindViewHolder(final MyViewHolder holder, final int position) {
             holder.text.setText(list.get(position));
-
+            holder.text.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(RecyclerviewActivity.this, holder.text.getText().toString(), Toast.LENGTH_SHORT).show();
+                    System.out.println(holder.text.getText().toString());
+                    Log.e("eeee", "aa");
+                    Log.w("wwww", holder.text.getText().toString());
+                    Log.i("iiii", holder.text.getText().toString());
+                    Log.d("dddd", holder.text.getText().toString());
+                }
+            });
         }
 
         @Override

@@ -6,6 +6,14 @@
     xmlns:ptr="http://schemas.android.com/apk/res-auto"
     >
 
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pulltorefrsh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ptr:ptrDrawableStart="@drawable/default_ptr_flip"
+        ptr:ptrAnimationStyle="flip"
+        />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,12 +27,4 @@
             android:layout_height="wrap_content"/>
 
     </RelativeLayout>
-
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
-        android:id="@+id/pulltorefrsh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        ptr:ptrDrawableStart="@drawable/default_ptr_flip"
-        ptr:ptrAnimationStyle="flip"
-        />
     </RelativeLayout>
