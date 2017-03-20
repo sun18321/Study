@@ -42,6 +42,7 @@ public class RefreshActivity extends AppCompatActivity {
             }
         }
     };
+    private PullToRefreshBase.OnRefreshListener2<ListView> mListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class RefreshActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 8; i++) {
             RefreshData refreshData = new RefreshData();
             refreshData.first = "first" + i;
             refreshData.second = "second" + i;
@@ -65,8 +66,10 @@ public class RefreshActivity extends AppCompatActivity {
         findViewById(R.id.text_refresh).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRefreshListView.setRefreshing(true);
+//                mListener.onPullUpToRefresh(null);
+//                mRefreshListView.setRefreshing(true);
                 System.out.println("点击了button");
+
             }
         });
         mRefreshListView = (PullToRefreshListView) findViewById(R.id.pulltorefrsh);
@@ -84,7 +87,7 @@ public class RefreshActivity extends AppCompatActivity {
         initRefresh();
 
 
-        mRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
+        mListener = new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
                 RefreshData data = new RefreshData();
@@ -122,7 +125,8 @@ public class RefreshActivity extends AppCompatActivity {
 //                mRefreshListView.onRefreshComplete();
                 mHandler.sendEmptyMessageDelayed(0, 1000);
             }
-        });
+        };
+        mRefreshListView.setOnRefreshListener(mListener);
     }
 
     private void initRefresh() {

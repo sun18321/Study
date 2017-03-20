@@ -5,7 +5,7 @@
               android:layout_height="60dp">
 
     <TextView
-        android:textSize="20sp"
+        android:textSize="26sp"
         android:id="@+id/item_text"
         android:text="哈哈"
         android:layout_centerInParent="true"
