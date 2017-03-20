@@ -107,6 +107,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+        <Button
+            android:id="@+id/screen_click"
+            android:text="screen_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <Button
+           android:id="@+id/listview_many_item"
+           android:text="listview_manyItem"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+
+         <Button
+            android:id="@+id/recyclerview_many_item"
+            android:text="recyclerview_many_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
 

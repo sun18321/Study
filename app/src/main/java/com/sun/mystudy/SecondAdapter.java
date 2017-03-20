@@ -36,7 +36,9 @@ public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.SecondView
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.doListen(position);
+                if (mListener != null) {
+                    mListener.doListen(position);
+                }
             }
         });
     }
@@ -54,11 +56,11 @@ public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.SecondView
         }
     }
 
-    interface RecyclerListener {
+    public interface RecyclerListener {
         void doListen(int postion);
     }
 
-    void setRcyclerListener(RecyclerListener listener) {
+   public void setRcyclerListener(RecyclerListener listener) {
         mListener = listener;
     }
 

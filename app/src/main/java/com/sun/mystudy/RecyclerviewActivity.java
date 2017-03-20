@@ -37,6 +37,7 @@ public class RecyclerviewActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 //        mRecyclerView.setAdapter(new MyAdapter());
         mRecyclerView.setAdapter(new SecondAdapter(this, list));
+
 //        mRecyclerView.
     }
 
@@ -51,7 +52,6 @@ public class RecyclerviewActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(MyViewHolder holder, final int position) {
             holder.text.setText(list.get(position));
-
         }
 
         @Override
@@ -90,6 +90,8 @@ public class RecyclerviewActivity extends AppCompatActivity {
             return 0;
         }
     }
+
+    
 
 
 

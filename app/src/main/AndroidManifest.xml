@@ -74,6 +74,12 @@
         </activity>
         <activity android:name=".RecyclerviewActivity">
         </activity>
+        <activity android:name=".ScreenClickActivity">
+        </activity>
+        <activity android:name=".ListviewManyItemActivity">
+        </activity>
+        <activity android:name=".RecyclerviewManyItemActivity">
+        </activity>
     </application>
 
 </manifest>
