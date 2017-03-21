@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+
+
+
 <LinearLayout
     android:orientation="horizontal"
     android:layout_width="wrap_content"
@@ -114,7 +126,9 @@
             android:layout_height="wrap_content"/>
 
 
-    </LinearLayout>    <LinearLayout
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -134,5 +148,38 @@
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <Button
+           android:id="@+id/gallery"
+           android:text="gallery"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <Button
+           android:id="@+id/listview_load"
+           android:text="listview_load"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+       </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

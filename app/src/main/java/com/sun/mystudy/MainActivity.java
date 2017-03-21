@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.screen_click).setOnClickListener(this);
         findViewById(R.id.listview_many_item).setOnClickListener(this);
         findViewById(R.id.recyclerview_many_item).setOnClickListener(this);
+        findViewById(R.id.gallery).setOnClickListener(this);
+        findViewById(R.id.listview_load).setOnClickListener(this);
     }
 
     @Override
@@ -129,6 +131,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.recyclerview_many_item:
                 startActivity(new Intent(this, RecyclerviewManyItemActivity.class));
                 break;
+            case R.id.gallery:
+                startActivity(new Intent(this, GalleryActivity.class));
+                break;
+            case R.id.listview_load:
+                studyStartActivity(ListviewLoadActivity.class);
+                break;
         }
+    }
+
+    public void studyStartActivity(Class clazz) {
+        startActivity(new Intent(this,clazz));
     }
 }

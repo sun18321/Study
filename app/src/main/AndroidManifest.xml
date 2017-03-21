@@ -80,6 +80,10 @@
         </activity>
         <activity android:name=".RecyclerviewManyItemActivity">
         </activity>
+        <activity android:name=".GalleryActivity">
+        </activity>
+        <activity android:name=".ListviewLoadActivity">
+        </activity>
     </application>
 
 </manifest>
