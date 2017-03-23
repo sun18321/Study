@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.bumptech.glide.Glide;
@@ -24,6 +25,7 @@ public class ListviewLoadActivity extends AppCompatActivity {
             .mipmap.p32, R.mipmap.p33, R.mipmap.p34, R.mipmap.p35, R.mipmap.p36, R.mipmap
             .p37, R.mipmap.p38, R.mipmap.p39, R.mipmap.p40, R.mipmap.p41, R.mipmap.p42, R
             .mipmap.p43, R.mipmap.p44};
+    private ListLoadAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +33,8 @@ public class ListviewLoadActivity extends AppCompatActivity {
         setContentView(R.layout.listview_load);
 
         init();
-        ListLoadAdapter adapter = new ListLoadAdapter();
-        mListView.setAdapter(adapter);
+        mAdapter = new ListLoadAdapter();
+        mListView.setAdapter(mAdapter);
     }
 
     private void init() {
@@ -47,25 +49,43 @@ public class ListviewLoadActivity extends AppCompatActivity {
             public void onScrollStateChanged(AbsListView view, int scrollState) {
                 switch (scrollState) {
                     case SCROLL_STATE_IDLE:
-                        for (; start < end; start++) {
-                            ImageView image = (ImageView) mListView.findViewWithTag(start);
-//                            Glide.with(ListviewLoadActivity.this).load(mStraggeredIcons[start]).into(image);
-                            image.setBackground(getResources().getDrawable(mStraggeredIcons[start]));
-                        }
+                        mAdapter.setScrollState(false);
+                        int childCount = view.getChildCount();
+                        System.out.println("childcount" + childCount);
+                        for (int i = 0; i < childCount; i++) {
+                            ImageView image = (ImageView) view.getChildAt(i).findViewById(R.id.image);
+                            LinearLayout linear = (LinearLayout) view.getChildAt(i).findViewById(R.id.linear);
 
+                            if ((int)linear.getTag() != 1) {
+                                Glide.with(ListviewLoadActivity.this).load(linear.getTag()).into(image);
+                                linear.setTag(1);
+                            }
+                        }
+                        break;
+                    case SCROLL_STATE_FLING:
+                        mAdapter.setScrollState(true);
+                        break;
+                    case SCROLL_STATE_TOUCH_SCROLL:
+                        mAdapter.setScrollState(true);
                         break;
                 }
             }
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                start = firstVisibleItem;
-                end = firstVisibleItem + visibleItemCount;
             }
         });
     }
 
+
+
     class ListLoadAdapter extends BaseAdapter {
+        private boolean scrollState = true;
+
+        public void setScrollState(boolean scrollState) {
+            this.scrollState = scrollState;
+        }
+
         @Override
         public int getCount() {
             return mStraggeredIcons.length;
@@ -87,19 +107,24 @@ public class ListviewLoadActivity extends AppCompatActivity {
             if (convertView == null) {
                 holder = new LoadViewHolder();
                 convertView = LayoutInflater.from(ListviewLoadActivity.this).inflate(R.layout.item_load, parent, false);
+                holder.linearLayout = (LinearLayout) convertView.findViewById(R.id.linear);
                 holder.image = (ImageView) convertView.findViewById(R.id.image);
                 convertView.setTag(holder);
             } else {
+                System.out.println("convertview---" + convertView.getTag());
                 holder = (LoadViewHolder) convertView.getTag();
             }
-            holder.image.setTag(position);
+
+            if (scrollState) {
+                holder.linearLayout.setTag(mStraggeredIcons[position]);
+            } else {
+                Glide.with(ListviewLoadActivity.this).load(mStraggeredIcons[position]).into(holder.image);
+            }
             return convertView;
         }
+        class LoadViewHolder {
+            LinearLayout linearLayout;
+            ImageView image;
+        }
     }
-
-    class LoadViewHolder {
-        ImageView image;
-    }
-
-
 }
