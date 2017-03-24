@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -25,6 +26,7 @@ public class ListviewLoadActivity extends AppCompatActivity {
             .mipmap.p32, R.mipmap.p33, R.mipmap.p34, R.mipmap.p35, R.mipmap.p36, R.mipmap
             .p37, R.mipmap.p38, R.mipmap.p39, R.mipmap.p40, R.mipmap.p41, R.mipmap.p42, R
             .mipmap.p43, R.mipmap.p44};
+    private String[] string_text = {"一","二","三","四","五","六","七","八","九","十","壹","贰","叁","肆","伍","陆","柒","捌","玖","拾"};
     private ListLoadAdapter mAdapter;
 
     @Override
@@ -55,10 +57,13 @@ public class ListviewLoadActivity extends AppCompatActivity {
                         for (int i = 0; i < childCount; i++) {
                             ImageView image = (ImageView) view.getChildAt(i).findViewById(R.id.image);
                             LinearLayout linear = (LinearLayout) view.getChildAt(i).findViewById(R.id.linear);
+                            TextView text = (TextView) view.getChildAt(i).findViewById(R.id.text);
 
-                            if ((int)linear.getTag() != 1) {
+
+                            if (linear.getTag() != null) {
                                 Glide.with(ListviewLoadActivity.this).load(linear.getTag()).into(image);
-                                linear.setTag(1);
+                                text.setText(text.getTag().toString());
+                                linear.setTag(null);
                             }
                         }
                         break;
@@ -80,7 +85,7 @@ public class ListviewLoadActivity extends AppCompatActivity {
 
 
     class ListLoadAdapter extends BaseAdapter {
-        private boolean scrollState = true;
+        private boolean scrollState = false;
 
         public void setScrollState(boolean scrollState) {
             this.scrollState = scrollState;
@@ -88,7 +93,7 @@ public class ListviewLoadActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return mStraggeredIcons.length;
+            return string_text.length;
         }
 
         @Override
@@ -109,6 +114,7 @@ public class ListviewLoadActivity extends AppCompatActivity {
                 convertView = LayoutInflater.from(ListviewLoadActivity.this).inflate(R.layout.item_load, parent, false);
                 holder.linearLayout = (LinearLayout) convertView.findViewById(R.id.linear);
                 holder.image = (ImageView) convertView.findViewById(R.id.image);
+                holder.text = (TextView) convertView.findViewById(R.id.text);
                 convertView.setTag(holder);
             } else {
                 System.out.println("convertview---" + convertView.getTag());
@@ -117,14 +123,21 @@ public class ListviewLoadActivity extends AppCompatActivity {
 
             if (scrollState) {
                 holder.linearLayout.setTag(mStraggeredIcons[position]);
+                holder.text.setTag(string_text[position]);
+                Glide.with(ListviewLoadActivity.this).load(R.mipmap.g20).into(holder.image);
+
             } else {
                 Glide.with(ListviewLoadActivity.this).load(mStraggeredIcons[position]).into(holder.image);
+                holder.text.setText(string_text[position]);
+//                holder.text.setTag(null);
+                holder.linearLayout.setTag(null);
             }
             return convertView;
         }
         class LoadViewHolder {
             LinearLayout linearLayout;
             ImageView image;
+            TextView text;
         }
     }
 }

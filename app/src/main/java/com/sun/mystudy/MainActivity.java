@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.recyclerview_many_item).setOnClickListener(this);
         findViewById(R.id.gallery).setOnClickListener(this);
         findViewById(R.id.listview_load).setOnClickListener(this);
+        findViewById(R.id.recyclerview_load).setOnClickListener(this);
     }
 
     @Override
@@ -136,6 +137,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.listview_load:
                 studyStartActivity(ListviewLoadActivity.class);
+                break;
+            case R.id.recyclerview_load:
+                studyStartActivity(RecyclerviewLoadActivity.class);
                 break;
         }
     }
