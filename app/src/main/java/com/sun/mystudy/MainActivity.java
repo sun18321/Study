@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.gallery).setOnClickListener(this);
         findViewById(R.id.listview_load).setOnClickListener(this);
         findViewById(R.id.recyclerview_load).setOnClickListener(this);
+        findViewById(R.id.huawei_weather).setOnClickListener(this);
     }
 
     @Override
@@ -140,6 +141,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.recyclerview_load:
                 studyStartActivity(RecyclerviewLoadActivity.class);
+                break;
+            case R.id.huawei_weather:
+                studyStartActivity(WeatherActivity.class);
                 break;
         }
     }
