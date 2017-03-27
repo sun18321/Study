@@ -1,7 +1,9 @@
 package com.sun.mystudy;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -67,6 +69,32 @@ public class WeatherView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        int wrap_len = 600;
+        int width = measureDimension(wrap_len, widthMeasureSpec);
+        int height = measureDimension(wrap_len, heightMeasureSpec);
+        int len = Math.min(width, height);
+        setMeasuredDimension(len, len);
+    }
+
+    public int measureDimension(int defaultSize, int measureSpec) {
+        int result;
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+        if (specMode == MeasureSpec.EXACTLY) {
+            result = specSize;
+        } else {
+            result = defaultSize;
+            if (specMode == MeasureSpec.AT_MOST) {
+                result = Math.min(result, specSize);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
 
 
     }

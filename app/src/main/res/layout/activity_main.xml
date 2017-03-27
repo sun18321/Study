@@ -6,209 +6,207 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
    >
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-       <LinearLayout
-           android:orientation="vertical"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="refresh"/>
+
+                <Button
+                    android:id="@+id/net_request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="net_request"/>
+
+                <Button
+                    android:id="@+id/scroll_listview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="scroll_lisview"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/common_listview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="common_listview"/>
+
+                <Button
+                    android:id="@+id/itemClick_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="itemClick_list"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/listview_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="listview_page"/>
+
+                <Button
+                    android:id="@+id/popupwindow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="popupwindow"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/common_radiobutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="common_radiobutton"/>
+
+                <Button
+                    android:id="@+id/empty_radiobutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="empty_radiobutton"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="spinner"/>
+
+                <Button
+                    android:id="@+id/recyclerview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="recyclerview"/>
+
+                <Button
+                    android:id="@+id/screen_click"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="screen_click"/>
 
 
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/refresh"
-        android:text="refresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/net_request"
-        android:text="net_request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/listview_many_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="listview_manyItem"/>
 
-    <Button
-        android:id="@+id/scroll_listview"
-        android:text="scroll_lisview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/common_listview"
-            android:text="common_listview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/itemClick_list"
-            android:text="itemClick_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/listview_page"
-            android:text="listview_page"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/popupwindow"
-            android:text="popupwindow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/common_radiobutton"
-            android:text="common_radiobutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/empty_radiobutton"
-            android:text="empty_radiobutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/spinner"
-            android:text="spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/recyclerview"
-            android:text="recyclerview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/screen_click"
-            android:text="screen_click"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/recyclerview_many_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="recyclerview_many_item"/>
 
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-       <Button
-           android:id="@+id/listview_many_item"
-           android:text="listview_manyItem"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
-
-         <Button
-            android:id="@+id/recyclerview_many_item"
-            android:text="recyclerview_many_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="gallery"/>
 
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-       <Button
-           android:id="@+id/gallery"
-           android:text="gallery"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/listview_load"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="listview_load"/>
 
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-       <Button
-           android:id="@+id/listview_load"
-           android:text="listview_load"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
-
-       <Button
-           android:id="@+id/recyclerview_load"
-           android:text="recyclerview_load"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/recyclerview_load"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="recyclerview_load"/>
 
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-       <Button
-           android:id="@+id/huawei_weather"
-           android:text="huawei_weather"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/huawei_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="huawei_weather"/>
 
-     <!--  <Button
+                <!--  <Button
            android:id="@+id/"
            android:text="recyclerview_load"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"/>-->
 
 
-    </LinearLayout>
+            </LinearLayout>
 
-       </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>
