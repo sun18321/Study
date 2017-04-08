@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="F:\work_test\study_new\Study\PullToRefresh\src\main\assets"/><source path="F:\work_test\study_new\Study\PullToRefresh\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="F:\work_test\study_new\Study\PullToRefresh\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\WORK\study\MyStudy\PullToRefresh\src\main\assets"/><source path="D:\WORK\study\MyStudy\PullToRefresh\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\WORK\study\MyStudy\PullToRefresh\src\debug\assets"/></dataSet></merger>

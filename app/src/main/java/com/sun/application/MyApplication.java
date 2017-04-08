@@ -8,6 +8,8 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.List;
 
@@ -29,6 +31,15 @@ public class MyApplication extends Application {
 
         initLocation();
         mLocationClient.start();
+
+        initImageLoader();
+
+    }
+
+    private void initImageLoader() {
+        ImageLoaderConfiguration imageLoaderConfiguration = ImageLoaderConfiguration.createDefault(this);
+        ImageLoader.getInstance().init(imageLoaderConfiguration);
+
     }
 
     private void initLocation(){

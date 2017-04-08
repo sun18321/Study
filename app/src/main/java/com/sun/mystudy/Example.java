@@ -67,7 +67,7 @@ public class Example extends View {
         currentTemp=26;
         maxTemp=27;
         minTemp=20;
-//        bitmap= BitmapFactory.decodeResource(context.getResources(), R.drawable.w16);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.g8);
         ocAngle=230;
         fgAngle=90;
         offset=22;
@@ -108,6 +108,11 @@ public class Example extends View {
         int wrap_Len = 600;
         int width = measureDimension(wrap_Len, widthMeasureSpec);
         int height = measureDimension(wrap_Len, heightMeasureSpec);
+
+        System.out.println("examplewidth" + width);
+        System.out.println("exampleheight" + height);
+
+
         int len=Math.min(width,height);
         //保证是一个正方形
         setMeasuredDimension(len,len);

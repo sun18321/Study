@@ -88,6 +88,15 @@
         </activity>
         <activity android:name=".WeatherActivity">
         </activity>
+        <activity
+            android:name=".SoftKeyActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan">
+        </activity>
+        <activity android:name=".GiftActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+
+            >
+        </activity>
     </application>
 
 </manifest>

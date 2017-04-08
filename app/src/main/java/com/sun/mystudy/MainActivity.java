@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.listview_load).setOnClickListener(this);
         findViewById(R.id.recyclerview_load).setOnClickListener(this);
         findViewById(R.id.huawei_weather).setOnClickListener(this);
+        findViewById(R.id.soft_key).setOnClickListener(this);
+        findViewById(R.id.gift).setOnClickListener(this);
     }
 
     @Override
@@ -144,6 +146,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.huawei_weather:
                 studyStartActivity(WeatherActivity.class);
+                break;
+            case R.id.soft_key:
+                studyStartActivity(SoftKeyActivity.class);
+                break;
+            case R.id.gift:
+                studyStartActivity(GiftActivity.class);
                 break;
         }
     }
