@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.sun.anim.MyAnimationActivity;
 import com.sun.util.Utils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -88,6 +89,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.huawei_weather).setOnClickListener(this);
         findViewById(R.id.soft_key).setOnClickListener(this);
         findViewById(R.id.gift).setOnClickListener(this);
+        findViewById(R.id.my_anim).setOnClickListener(this);
+
     }
 
     @Override
@@ -152,6 +155,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.gift:
                 studyStartActivity(GiftActivity.class);
+                break;
+            case R.id.my_anim:
+                studyStartActivity(MyAnimationActivity.class);
                 break;
         }
     }

@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 
 import com.sun.anim.CarDownAnimation;
 import com.sun.anim.FireWorkAnimation;
+import com.sun.anim.MoonAnimation;
 
 import java.util.zip.Inflater;
 
@@ -26,7 +27,6 @@ public class GiftActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setContentView(R.layout.gift);
 
         init();
@@ -36,13 +36,11 @@ public class GiftActivity extends AppCompatActivity implements View.OnClickListe
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(Color.RED);
         }
-
         mInflater = LayoutInflater.from(GiftActivity.this);
-
         mGiftLayout = (RelativeLayout) findViewById(R.id.anim_gift);
         findViewById(R.id.firework).setOnClickListener(this);
         findViewById(R.id.car).setOnClickListener(this);
-
+        findViewById(R.id.moon).setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +59,12 @@ public class GiftActivity extends AppCompatActivity implements View.OnClickListe
                 mGiftLayout.addView(car_down, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 CarDownAnimation carDownAnimation = new CarDownAnimation(GiftActivity.this, car_down.findViewById(R.id.car_3_down));
                 carDownAnimation.startCarOnAnimation();
+                break;
+            case R.id.moon:
+                View view_moon = mInflater.inflate(R.layout.gift_moon, null);
+                mGiftLayout.addView(view_moon, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                MoonAnimation moonAnimation = new MoonAnimation(GiftActivity.this, view_moon.findViewById(R.id.moon_ly));
+                moonAnimation.startAnimation();
                 break;
         }
     }

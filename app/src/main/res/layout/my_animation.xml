@@ -6,48 +6,36 @@
     >
 
     <RelativeLayout
-        android:id="@+id/anim_gift"
+        android:id="@+id/view_anim"
+        android:layout_marginBottom="100dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </RelativeLayout>
 
-
     <LinearLayout
         android:orientation="vertical"
-        android:id="@+id/bottom"
+        android:padding="5dp"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="100dp">
 
         <LinearLayout
-            android:padding="5dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/firework"
-                android:text="烟花"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:id="@+id/car"
+                android:id="@+id/car_anim"
                 android:text="跑车"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <Button
-                android:id="@+id/moon"
-                android:text="赏月"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
-    </LinearLayout>
 
+    </LinearLayout>
 
 
 </RelativeLayout>

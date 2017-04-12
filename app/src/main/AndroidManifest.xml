@@ -92,10 +92,11 @@
             android:name=".SoftKeyActivity"
             android:windowSoftInputMode="stateHidden|adjustResize|adjustPan">
         </activity>
-        <activity android:name=".GiftActivity"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-
-            >
+        <activity
+            android:name=".GiftActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity android:name="com.sun.anim.MyAnimationActivity">
         </activity>
     </application>
 

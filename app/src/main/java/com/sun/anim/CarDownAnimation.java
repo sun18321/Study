@@ -10,6 +10,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.github.florent37.viewanimator.AnimationListener;
 import com.github.florent37.viewanimator.ViewAnimator;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -46,22 +48,54 @@ public class CarDownAnimation {
         //startAnimation(car3_up);
 
         //前轮动画，只加载与写监听
-        ImageLoader.getInstance()
-                .displayImage(DRAWABLE + R.drawable.gift_common_wheel, front_wheel,
-                        new ImageLoadingListener() {
-                            @Override public void onLoadingStarted(String s, View view) {
+//        ImageLoader.getInstance()
+//                .displayImage(DRAWABLE + R.drawable.gift_common_wheel, front_wheel,
+//                        new ImageLoadingListener() {
+//                            @Override public void onLoadingStarted(String s, View view) {
+//
+//                            }
+//
+//                            @Override public void onLoadingFailed(String s, View view, FailReason failReason) {
+//
+//                            }
+//
+//                            @Override public void onLoadingComplete(String s, View view, Bitmap bitmap) {
+//                                ViewAnimator.animate(front_wheel)
+//                                        .rotationX(0, 10)
+//                                        .rotationY(0f, -60.0f)
+//                                        .duration(30)
+////                                        .onStop(new AnimationListener.Stop() {
+////                                            @Override public void onStop() {
+////                                                ObjectAnimator objectAnimator =
+////                                                        ObjectAnimator.ofFloat(front_wheel, "rotation", 0f, -360f);
+////                                                objectAnimator.setRepeatCount(ValueAnimator.INFINITE);
+////                                                objectAnimator.setRepeatMode(ValueAnimator.RESTART);
+////                                                objectAnimator.setDuration(100);
+////                                                objectAnimator.start();
+////                                            }
+////                                        })
+//                                .start();
+//
+////                                ObjectAnimator objectAnimator =
+////                                                        ObjectAnimator.ofFloat(front_wheel, "rotation", 0f, -360f);
+////                                                objectAnimator.setRepeatCount(ValueAnimator.INFINITE);
+////                                                objectAnimator.setRepeatMode(ValueAnimator.RESTART);
+////                                                objectAnimator.setDuration(100);
+////                                                objectAnimator.start();
+//
+//
+//                            }
+//
+//                            @Override public void onLoadingCancelled(String s, View view) {
+//
+//                            }
+//                        });
 
-                            }
 
-                            @Override public void onLoadingFailed(String s, View view, FailReason failReason) {
-
-                            }
-
-                            @Override public void onLoadingComplete(String s, View view, Bitmap bitmap) {
-                                ViewAnimator.animate(front_wheel)
-                                        .rotationX(0, 11)
-                                        .rotationY(0f, -60.0f)
-                                        .duration(30)
+        ViewAnimator.animate(front_wheel)
+                .rotationX(0, 10)
+                .rotationY(0f, -60.0f)
+                .duration(30)
                                         .onStop(new AnimationListener.Stop() {
                                             @Override public void onStop() {
                                                 ObjectAnimator objectAnimator =
@@ -71,13 +105,12 @@ public class CarDownAnimation {
                                                 objectAnimator.setDuration(100);
                                                 objectAnimator.start();
                                             }
-                                        }).start();
-                            }
+                                        })
+                .start();
 
-                            @Override public void onLoadingCancelled(String s, View view) {
 
-                            }
-                        });
+
+
 
         //后轮动画
         ImageLoader.getInstance()
@@ -104,6 +137,7 @@ public class CarDownAnimation {
                                                 objectAnimator.setRepeatMode(ValueAnimator.RESTART);
                                                 objectAnimator.setDuration(100);
                                                 objectAnimator.start();
+
                                             }
                                         }).start();
                             }
@@ -126,12 +160,17 @@ public class CarDownAnimation {
                 AnimationUtils.loadAnimation(context, R.anim.car_down_anim3);
         carAnimation3.getFillAfter();
 
+
+
         carAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override public void onAnimationStart(Animation animation) {
 
             }
 
             @Override public void onAnimationEnd(Animation animation) {
+
+//                Toast.makeText(context, "动画一结束了", Toast.LENGTH_SHORT).show();show
+
                 car3_down.startAnimation(carAnimation2);
             }
 
@@ -139,10 +178,10 @@ public class CarDownAnimation {
 
             }
         });
-        carAnimation.setInterpolator(new DecelerateInterpolator());
+//        carAnimation.setInterpolator(new DecelerateInterpolator());
         //动画阶段2
 
-        carAnimation2.setAnimationListener(new Animation.AnimationListener() {
+       carAnimation2.setAnimationListener(new Animation.AnimationListener() {
             @Override public void onAnimationStart(Animation animation) {
 
                 //灯光动画，可见，不可见，可见，不可见,可见，不可见
@@ -205,11 +244,10 @@ public class CarDownAnimation {
 
             }
         });
-        carAnimation3.setInterpolator(new AccelerateInterpolator());
+//        carAnimation3.setInterpolator(new AccelerateInterpolator());
 
         car3_down.startAnimation(carAnimation);
     }
-
     //减速，加速器
     public class DecelerateAccelerateInterpolator implements android.view.animation.Interpolator {
 
