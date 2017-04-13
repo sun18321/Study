@@ -4,6 +4,8 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -31,6 +33,7 @@ public class MyAnimationActivity extends AppCompatActivity implements View.OnCli
         mInflater = LayoutInflater.from(MyAnimationActivity.this);
         mView_anim = (RelativeLayout) findViewById(R.id.view_anim);
         findViewById(R.id.car_anim).setOnClickListener(this);
+        findViewById(R.id.rocket).setOnClickListener(this);
     }
 
     @Override
@@ -39,8 +42,15 @@ public class MyAnimationActivity extends AppCompatActivity implements View.OnCli
             case R.id.car_anim:
                 View view_car = mInflater.inflate(R.layout.my_car, null);
                 mView_anim.addView(view_car, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-
                 anim1(view_car);
+                break;
+            case R.id.rocket:
+                View view_rocket = mInflater.inflate(R.layout.anim_rocket, null);
+                mView_anim.addView(view_rocket, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                ImageView img = (ImageView) view_rocket.findViewById(R.id.img_rocket);
+                img.setImageResource(R.drawable.rocket);
+                AnimationDrawable animationDrawable = (AnimationDrawable) img.getDrawable();
+                animationDrawable.start();
                 break;
         }
     }

@@ -98,6 +98,8 @@
         </activity>
         <activity android:name="com.sun.anim.MyAnimationActivity">
         </activity>
+        <activity android:name=".ChronometerActivity">
+        </activity>
     </application>
 
 </manifest>

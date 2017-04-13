@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.soft_key).setOnClickListener(this);
         findViewById(R.id.gift).setOnClickListener(this);
         findViewById(R.id.my_anim).setOnClickListener(this);
-
+        findViewById(R.id.chronometer).setOnClickListener(this);
     }
 
     @Override
@@ -158,6 +158,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.my_anim:
                 studyStartActivity(MyAnimationActivity.class);
+                break;
+            case R.id.chronometer:
+                studyStartActivity(ChronometerActivity.class);
                 break;
         }
     }

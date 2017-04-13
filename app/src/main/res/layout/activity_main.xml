@@ -135,16 +135,10 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/listview_many_item"
+                    android:id="@+id/gallery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="listview_manyItem"/>
-
-                <Button
-                    android:id="@+id/recyclerview_many_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="recyclerview_many_item"/>
+                    android:text="gallery"/>
 
 
             </LinearLayout>
@@ -156,10 +150,16 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/gallery"
+                    android:id="@+id/listview_many_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="gallery"/>
+                    android:text="listview_manyItem"/>
+
+                <Button
+                    android:id="@+id/recyclerview_many_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="recyclerview_many_item"/>
 
 
             </LinearLayout>
@@ -217,11 +217,26 @@
                     android:layout_height="wrap_content"
                     android:text="soft_key"/>
 
+                <!--<Button-->
+                    <!--android:id="@+id/gift"-->
+                    <!--android:text="gift"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"/>-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/gift"
-                    android:text="gift"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="gift"/>
 
                 <Button
                     android:id="@+id/my_anim"
@@ -229,7 +244,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
+                <Button
+                    android:id="@+id/chronometer"
+                    android:text="chronometer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>
