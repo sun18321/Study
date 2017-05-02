@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.sun.anim.MyAnimationActivity;
+import com.sun.dialog.DialogActivity;
 import com.sun.util.Utils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.gift).setOnClickListener(this);
         findViewById(R.id.my_anim).setOnClickListener(this);
         findViewById(R.id.chronometer).setOnClickListener(this);
+        findViewById(R.id.dialog).setOnClickListener(this);
     }
 
     @Override
@@ -161,6 +163,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.chronometer:
                 studyStartActivity(ChronometerActivity.class);
+                break;
+            case R.id.dialog:
+                studyStartActivity(DialogActivity.class);
                 break;
         }
     }
