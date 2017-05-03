@@ -6,7 +6,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
         <item name="android:listDivider">@drawable/item_line</item>
     </style>
 
@@ -62,5 +61,9 @@
         <item name="android:textColor">#ff666666</item>
     </style>
 
+
+    <style name="NoTitle" parent="AppTheme.NoActionBar">
+
+    </style>
 
 </resources>

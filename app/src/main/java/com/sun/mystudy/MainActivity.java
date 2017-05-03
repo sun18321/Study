@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.my_anim).setOnClickListener(this);
         findViewById(R.id.chronometer).setOnClickListener(this);
         findViewById(R.id.dialog).setOnClickListener(this);
+        findViewById(R.id.dialog_fragment).setOnClickListener(this);
     }
 
     @Override
@@ -166,6 +167,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.dialog:
                 studyStartActivity(DialogActivity.class);
+                break;
+            case R.id.dialog_fragment:
+                studyStartActivity(DialogFragmentActivity.class);
                 break;
         }
     }
