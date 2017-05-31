@@ -7,27 +7,6 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        >
-
-        <Button
-            android:id="@+id/first"
-            android:text="first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp"
- >
-
-    <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     <Button
@@ -47,8 +26,8 @@
         android:text="third"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
     </LinearLayout>
+
 
 
 </RelativeLayout>
