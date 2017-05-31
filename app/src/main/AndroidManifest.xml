@@ -100,6 +100,12 @@
         </activity>
         <activity android:name=".ChronometerActivity">
         </activity>
+        <activity android:name="com.sun.dialog.DialogActivity">
+        </activity>
+        <activity android:name=".DialogFragmentActivity"
+            android:theme="@style/NoTitle"
+            >
+        </activity>
         <activity android:name=".DialogActivity">
         </activity>
         <activity android:name=".UpdateAppActivity">
