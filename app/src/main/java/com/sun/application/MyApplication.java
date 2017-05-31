@@ -17,6 +17,7 @@ import java.util.List;
  * Created by sun on 2017/2/20.
  */
 public class MyApplication extends Application {
+/*
     public LocationClient mLocationClient = null;
     public BDLocationListener myListener = new MyLocationListener();
 
@@ -182,4 +183,5 @@ public class MyApplication extends Application {
 
         }
     }
+*/
 }

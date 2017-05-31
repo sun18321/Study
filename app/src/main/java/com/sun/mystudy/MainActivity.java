@@ -91,6 +91,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.gift).setOnClickListener(this);
         findViewById(R.id.my_anim).setOnClickListener(this);
         findViewById(R.id.chronometer).setOnClickListener(this);
+        findViewById(R.id.dialog).setOnClickListener(this);
+        findViewById(R.id.update_app).setOnClickListener(this);
+        findViewById(R.id.work_update).setOnClickListener(this);
+        findViewById(R.id.progress).setOnClickListener(this);
     }
 
     @Override
@@ -161,6 +165,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.chronometer:
                 studyStartActivity(ChronometerActivity.class);
+                break;
+            case R.id.dialog:
+                studyStartActivity(DialogActivity.class);
+                break;
+            case R.id.update_app:
+                studyStartActivity(UpdateAppActivity.class);
+                break;
+            case R.id.work_update:
+                studyStartActivity(WorkUpdateActivity.class);
+                break;
+            case R.id.progress:
+                studyStartActivity(ProgressActivity.class);
                 break;
         }
     }
