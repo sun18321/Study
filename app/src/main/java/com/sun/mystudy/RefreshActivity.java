@@ -69,6 +69,7 @@ public class RefreshActivity extends AppCompatActivity {
 //                mListener.onPullUpToRefresh(null);
 //                mRefreshListView.setRefreshing(true);
                 System.out.println("点击了button");
+                mRefreshListView.setRefreshing();
 
             }
         });
@@ -127,6 +128,8 @@ public class RefreshActivity extends AppCompatActivity {
             }
         };
         mRefreshListView.setOnRefreshListener(mListener);
+
+
     }
 
     private void initRefresh() {

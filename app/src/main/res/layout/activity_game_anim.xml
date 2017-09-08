@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+    >
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        >
+    <LinearLayout
+        android:id="@+id/ll_location"
+        android:background="@drawable/bg_poker"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:clipChildren="false"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            >
+            <RelativeLayout
+                android:id="@+id/player_1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                >
+                <include layout="@layout/poker_group_start"
+                         android:layout_height="match_parent"
+                         android:layout_width="match_parent"
+                    />
+                <include layout="@layout/view_poker_group"
+                         android:layout_height="match_parent"
+                         android:layout_width="match_parent"
+                         android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@+id/player_1"
+                android:id="@+id/bet_niu_0"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                >
+                <ImageView
+                    android:id="@+id/bull_1"
+                    android:src="@mipmap/ic_bull_starblue"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="3倍"
+                    android:textColor="#ffffff"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:ems="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/chip_amount_0"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@id/bull_1"
+                    android:maxLines="1"
+                    android:textSize="14sp"
+                    android:textColor="#ffffff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/chip_my_amount_0"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@id/bull_1"
+                    android:textSize="14sp"
+                    android:textColor="#ffffff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/player_bg_1"
+                android:visibility="invisible"
+                android:background="@drawable/bg_poker_deep"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_2"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                >
+                <include layout="@layout/poker_group_start"/>
+                <include layout="@layout/view_poker_group"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@+id/player_2"
+                android:id="@+id/bet_niu_1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                >
+                <ImageView
+                    android:id="@+id/bull_2"
+                    android:src="@mipmap/ic_bull_starred"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="3倍"
+                    android:textColor="#ffffff"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:ems="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/chip_amount_1"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@id/bull_2"
+                    android:textSize="14sp"
+                    android:textColor="#ffffff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/chip_my_amount_1"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@id/bull_2"
+                    android:textSize="14sp"
+                    android:textColor="#ffffff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/player_bg_2"
+                android:visibility="invisible"
+                android:background="@drawable/bg_poker_deep"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_3"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                >
+                <include layout="@layout/poker_group_start"/>
+                <include layout="@layout/view_poker_group"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@+id/player_3"
+                android:id="@+id/bet_niu_2"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                >
+                <ImageView
+                    android:id="@+id/bull_3"
+                    android:src="@mipmap/ic_bull_staryello"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="3倍"
+                    android:textColor="#ffffff"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:ems="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/chip_amount_2"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@id/bull_3"
+                    android:textSize="14sp"
+                    android:textColor="#ffffff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/chip_my_amount_2"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@id/bull_3"
+                    android:textSize="14sp"
+                    android:textColor="#ffffff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/player_bg_3"
+                android:visibility="invisible"
+                android:background="@drawable/bg_poker_deep"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/ll_location"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:background="@drawable/bg_bet"
+        android:clipChildren="false"
+        >
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:background="@mipmap/me_myaccount_reddiamond"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_wallet"
+            android:layout_toRightOf="@+id/iv_location"
+            android:layout_marginLeft="5dp"
+            android:text="100"
+            android:textColor="#ffffff"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv_lsjl"
+            android:background="@mipmap/lsjl"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_bet_3"
+            android:layout_toLeftOf="@+id/iv_lsjl"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_bet"
+            android:gravity="center"
+            android:clipChildren="false"
+            >
+
+            <ImageView
+                android:id="@+id/iv_bet_3"
+                android:background="@mipmap/me_myaccount_reddiamond"
+                android:layout_marginTop="8dp"
+                android:layout_width="8dp"
+                android:layout_height="6dp"
+                />
+            <TextView
+                android:text="500"
+                android:textSize="6sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="#ffffff"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_bet_2"
+            android:layout_toLeftOf="@+id/ll_bet_3"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_bet"
+            android:gravity="center"
+            android:clipChildren="false"
+            >
+
+            <ImageView
+                android:id="@+id/iv_bet_2"
+                android:background="@mipmap/me_myaccount_reddiamond"
+                android:layout_width="8dp"
+                android:layout_height="6dp"
+                android:layout_marginTop="8dp"
+                />
+            <TextView
+                android:text="100"
+                android:textSize="6sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="#ffffff"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_bet_1"
+            android:layout_toLeftOf="@+id/ll_bet_2"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_bet"
+            android:gravity="center"
+            android:clipChildren="false"
+            >
+
+            <ImageView
+                android:id="@+id/iv_bet_1"
+                android:background="@mipmap/me_myaccount_reddiamond"
+                android:layout_marginTop="8dp"
+                android:layout_width="8dp"
+                android:layout_height="6dp"
+                />
+            <TextView
+                android:text="50"
+                android:textSize="6sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="#ffffff"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:id="@+id/poker_deal"
+        android:src="@mipmap/img_bullflight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/poker_translate"
+        android:background="@mipmap/poker_back_bull"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="94dp"
+        android:layout_width="40dp"
+        android:layout_height="48dp"/>
+
+    <RelativeLayout
+        android:id="@+id/game_start_toast"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@mipmap/bg_poker_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@mipmap/toast_bpks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/game_lose_toast"
+        android:visibility="invisible"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@mipmap/bg_poker_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@mipmap/toast_jy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_clock"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_clock"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <TextView
+            android:id="@+id/tv_countdown"
+            android:layout_centerInParent="true"
+            android:text="20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/bet_anim_1"
+        android:background="@mipmap/me_myaccount_reddiamond"
+        android:layout_width="16dp"
+        android:layout_height="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="152dp"
+        />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/bet_anim_2"
+        android:background="@mipmap/me_myaccount_reddiamond"
+        android:layout_width="16dp"
+        android:layout_height="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="107dp"
+        />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/bet_anim_3"
+        android:background="@mipmap/me_myaccount_reddiamond"
+        android:layout_width="16dp"
+        android:layout_height="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="62dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_auto_bg"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@mipmap/auto_bg"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="游戏即将开始"
+            android:textColor="#FFC610"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="50dp"
+        android:layout_height="60dp">
+
+
+        <ImageView
+            android:background="@drawable/poker_front"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/poker_number_center"
+            android:layout_centerInParent="true"
+            android:layout_width="30dp"
+            android:layout_height="36dp"/>
+
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_centerHorizontal="true"
+                android:id="@+id/poker_number"
+                android:src="@mipmap/img_poker_king_red"
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <ImageView
+                android:id="@+id/poker_color"
+                android:src="@mipmap/poker_heart"
+                android:layout_below="@+id/poker_number"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_alignRight="@+id/poker_number"
+                android:layout_alignLeft="@+id/poker_number"/>
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

@@ -23,7 +23,7 @@ import okhttp3.Response;
 
 public class UpdateAppActivity extends AppCompatActivity {
 
-    final String url = "http://192.168.16.41:8080/verson.txt";
+    final String url = "http://192.168.16.75:8080/verson.txt";
     private long lastDownloadId = 0;
     private MaterialDialog mMaterialDialog;
     public static Uri CONTENT_URL = Uri.parse("content://downloads/my_downloads");

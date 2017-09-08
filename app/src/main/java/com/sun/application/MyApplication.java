@@ -17,25 +17,40 @@ import java.util.List;
  * Created by sun on 2017/2/20.
  */
 public class MyApplication extends Application {
-/*
     public LocationClient mLocationClient = null;
     public BDLocationListener myListener = new MyLocationListener();
+
+    public static String cookie;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        mLocationClient = new LocationClient(getApplicationContext());
-        //声明LocationClient类
-        mLocationClient.registerLocationListener( myListener );
-        //注册监听函数
-
-        initLocation();
-        mLocationClient.start();
-
-        initImageLoader();
+//        mLocationClient = new LocationClient(getApplicationContext());
+//        //声明LocationClient类
+//        mLocationClient.registerLocationListener( myListener );
+//        //注册监听函数
+//
+//        initLocation();
+//        mLocationClient.start();
+//
+//        initImageLoader();
 
     }
+
+    public  static String getCookie() {
+        return cookie;
+    }
+
+    public  static void setCookie(String cookie) {
+        MyApplication.cookie = cookie;
+    }
+
+
+
+
+
+
 
     private void initImageLoader() {
         ImageLoaderConfiguration imageLoaderConfiguration = ImageLoaderConfiguration.createDefault(this);
@@ -183,5 +198,4 @@ public class MyApplication extends Application {
 
         }
     }
-*/
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyStudy</string>
     <string name="title_activity_my_animation">MyAnimationActivity</string>
+    <string name="title_activity_game_anim">GameAnimActivity</string>
 </resources>

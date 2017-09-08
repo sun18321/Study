@@ -204,9 +204,9 @@ public class Utils {
 //
 //   }
 //
-//   public static int dip2px(Context paramContext, float paramFloat) {
-//      return (int) (paramFloat * paramContext.getResources().getDisplayMetrics().density);
-//   }
+   public static int dip2px(Context paramContext, float paramFloat) {
+      return (int) (paramFloat * paramContext.getResources().getDisplayMetrics().density);
+   }
 //
 //   public static String getResorcString(int resId) {
 //      return AULiveApplication.mContext.getResources().getString(resId);

@@ -17,11 +17,14 @@ import android.widget.ProgressBar;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
+import com.sun.application.MyApplication;
 import com.sun.bean.WorkUpdateBean;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.CookieHandler;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import okhttp3.Call;
@@ -36,7 +39,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class WorkUpdateActivity extends AppCompatActivity {
-    private String LOGIN_URL = "http://phone.52mdb.cc/index/login";
+    private String LOGIN_URL = "http://phone.hainantaohua.com/index/login";
     public static Uri CONTENT_URL = Uri.parse("content://downloads/my_downloads");
     private ProgressDialog mProgressDialog;
     private long lastDownloadId = 0;
@@ -65,9 +68,9 @@ public class WorkUpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work_update);
 
-//        imitateLogin();
+        imitateLogin();
 
-        checkUpdate();
+//        checkUpdate();
     }
 
     private void imitateLogin() {
@@ -89,7 +92,30 @@ public class WorkUpdateActivity extends AppCompatActivity {
 //            }
 //        }).build();
 
-        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().cookieJar(new CookieJar() {
+            private final HashMap<String, List<Cookie>> cookieStore = new HashMap<>();
+            @Override
+            public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
+                cookieStore.put(url.host(), cookies);
+                Cookie cookie = cookies.get(0);
+                String value = cookie.value();
+                System.out.println("value----" + value);//这个就是cookie
+
+                getSharedPreferences("data", MODE_PRIVATE).edit().putString("cookie", value).commit();
+
+                System.out.println("get0---" + cookie);
+
+                System.out.println("应该是cookie了吧" + cookies);
+
+            }
+
+            @Override
+            public List<Cookie> loadForRequest(HttpUrl url) {
+                List<Cookie> cookies = cookieStore.get(url.host());
+                return cookies != null ? cookies : new ArrayList<Cookie>();
+            }
+        }).build();
+
         FormBody formBody = new FormBody.Builder().add("account", "18555556688")
                 .add("pwd", "bfd59291e825b5f2bbf1eb76569f8fe7")
                 .build();
@@ -109,6 +135,8 @@ public class WorkUpdateActivity extends AppCompatActivity {
                 int size = headers.size();
                 System.out.println("headers的size" + headers.size());
                 System.out.println("header-----" + headers);
+//                headers.
+
 
             }
         });
@@ -169,7 +197,7 @@ public class WorkUpdateActivity extends AppCompatActivity {
 //            mMaterialDialog = new MaterialDialog.Builder(WorkUpdateActivity.this)
 //                    .title("dialog版本升级")
 //                    .content("dialog正在下载")
-//                    .progress(false, 100, false)
+//                    .progress(false, 100, false)  
 //                    .cancelable(false)
 //                    .show();
 //        }

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.sun.mystudy">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -102,9 +103,9 @@
         </activity>
         <activity android:name="com.sun.dialog.DialogActivity">
         </activity>
-        <activity android:name=".DialogFragmentActivity"
-            android:theme="@style/NoTitle"
-            >
+        <activity
+            android:name=".DialogFragmentActivity"
+            android:theme="@style/NoTitle">
         </activity>
         <activity android:name=".DialogActivity">
         </activity>
@@ -115,14 +116,78 @@
         <activity android:name=".ProgressActivity">
         </activity>
 
-
         <receiver android:name=".UpdateBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
             </intent-filter>
-
         </receiver>
 
+        <activity android:name=".CustomDownloadActivity">
+        </activity>
+        <activity android:name=".UploadPictureActivity">
+        </activity>
+        <activity android:name=".SocketActivity">
+        </activity>
+        <activity android:name=".NewSocketActivity">
+        </activity>
+        <activity
+            android:name=".WebviewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".JsonActivity">
+        </activity>
+        <activity android:name=".CaptureScreenActivity">
+        </activity>
+        <activity android:name="com.sun.example.MediaProjectionDemo">
+        </activity>
+        <activity
+            android:name=".AddviewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".LayoutActivity">
+        </activity>
+        <activity android:name=".GifActivity">
+        </activity>
+        <activity android:name=".GameAnimActivity">
+        </activity>
+        <activity android:name=".ExampleActivity">
+        </activity>
+        <activity android:name=".TestAnimActivity">
+        </activity>
+        <activity android:name=".SocketBreakActivity">
+        </activity>
+        <activity android:name=".LogActivity">
+        </activity>
+        <activity android:name=".QQLoginActivity">
+        </activity>
+        <activity android:name=".WechatLoginActivity">
+        </activity>
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="tencent1105974650"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".BindActivity">
+        </activity>
+        <activity android:name=".EditActivity">
+        </activity>
+        <activity android:name=".SoundActivity">
+        </activity>
+        <activity android:name=".RatingActivity">
+        </activity>
     </application>
 
 </manifest>

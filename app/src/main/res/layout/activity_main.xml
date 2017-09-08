@@ -218,12 +218,17 @@
                     android:layout_height="wrap_content"
                     android:text="soft_key"/>
 
-                <!--<Button-->
-                <!--android:id="@+id/gift"-->
-                <!--android:text="gift"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"/>-->
+                <Button
+                android:id="@+id/test_anim"
+                android:text="test_anim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
+                <Button
+                android:id="@+id/socket_break"
+                android:text="socket_break"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
@@ -286,6 +291,76 @@
                     />
 
                 <Button
+                    android:id="@+id/my_download"
+                    android:text="custom_dl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/upload_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="upload"/>
+
+                <Button
+                    android:id="@+id/socket"
+                    android:text="socket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button
+                    android:id="@+id/second_socket"
+                    android:text="socket_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button
+                    android:id="@+id/webview"
+                    android:text="webview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/json_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="json"/>
+
+                <Button
+                    android:id="@+id/capture_screen"
+                    android:text="capture_screen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button
+                    android:id="@+id/capture_net"
+                    android:text="capture_net"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -293,7 +368,114 @@
             </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/addview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="addview"/>
+
+                <Button
+                    android:id="@+id/layout"
+                    android:text="layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button
+                    android:id="@+id/gif"
+                    android:text="gif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/game_anim"
+                android:text="game_anim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <Button
+                android:id="@+id/game_anim_add"
+                android:text="game_anim_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                android:id="@+id/log"
+                android:text="test_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/qq"
+                android:text="qq_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <Button
+                android:id="@+id/wechat"
+                android:text="wechat_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                android:id="@+id/edit"
+                android:text="edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bind"
+                    android:text="bind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <Button
+                    android:id="@+id/sound"
+                    android:text="sound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <Button
+                    android:id="@+id/ratingbar"
+                    android:text="rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
 
 
         </LinearLayout>

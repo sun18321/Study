@@ -3,6 +3,7 @@ package com.sun.mystudy;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.sun.anim.MyAnimationActivity;
 import com.sun.dialog.DialogActivity;
+import com.sun.example.MediaProjectionDemo;
 import com.sun.util.Utils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -61,10 +63,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             initView();
         }
-
     }
 
     private void initView() {
+
         mRefresh = (Button) findViewById(R.id.refresh);
         mRefresh.setOnClickListener(this);
         mNetRequest = (Button) findViewById(R.id.net_request);
@@ -97,6 +99,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.update_app).setOnClickListener(this);
         findViewById(R.id.work_update).setOnClickListener(this);
         findViewById(R.id.progress).setOnClickListener(this);
+        findViewById(R.id.my_download).setOnClickListener(this);
+        findViewById(R.id.upload_img).setOnClickListener(this);
+        findViewById(R.id.socket).setOnClickListener(this);
+        findViewById(R.id.second_socket).setOnClickListener(this);
+        findViewById(R.id.webview).setOnClickListener(this);
+        findViewById(R.id.json_test).setOnClickListener(this);
+        findViewById(R.id.capture_screen).setOnClickListener(this);
+        findViewById(R.id.capture_net).setOnClickListener(this);
+        findViewById(R.id.addview).setOnClickListener(this);
+        findViewById(R.id.layout).setOnClickListener(this);
+        findViewById(R.id.gif).setOnClickListener(this);
+        findViewById(R.id.game_anim).setOnClickListener(this);
+        findViewById(R.id.game_anim_add).setOnClickListener(this);
+        findViewById(R.id.test_anim).setOnClickListener(this);
+        findViewById(R.id.socket_break).setOnClickListener(this);
+        findViewById(R.id.log).setOnClickListener(this);
+        findViewById(R.id.qq).setOnClickListener(this);
+        findViewById(R.id.wechat).setOnClickListener(this);
+        findViewById(R.id.bind).setOnClickListener(this);
+        findViewById(R.id.edit).setOnClickListener(this);
+        findViewById(R.id.sound).setOnClickListener(this);
+        findViewById(R.id.ratingbar).setOnClickListener(this);
+//        findViewById(R.id.layout).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//
+//            }
+//        });
+
     }
 
     @Override
@@ -179,6 +211,72 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.progress:
                 studyStartActivity(ProgressActivity.class);
+                break;
+            case R.id.my_download:
+                studyStartActivity(CustomDownloadActivity.class);
+                break;
+            case R.id.upload_img:
+                studyStartActivity(UploadPictureActivity.class);
+                break;
+            case R.id.socket:
+                studyStartActivity(SocketActivity.class);
+                break;
+            case R.id.second_socket:
+                studyStartActivity(NewSocketActivity.class);
+                break;
+            case R.id.webview:
+                studyStartActivity(WebviewActivity.class);
+                break;
+            case R.id.json_test:
+                studyStartActivity(JsonActivity.class);
+                break;
+            case R.id.capture_screen:
+                studyStartActivity(CaptureScreenActivity.class);
+                break;
+            case R.id.capture_net:
+                studyStartActivity(MediaProjectionDemo.class);
+                break;
+            case R.id.addview:
+                studyStartActivity(AddviewActivity.class);
+                break;
+            case R.id.layout:
+                studyStartActivity(LayoutActivity.class);
+                break;
+            case R.id.gif:
+                studyStartActivity(GifActivity.class);
+                break;
+            case R.id.game_anim:
+                studyStartActivity(GameAnimActivity.class);
+                break;
+            case R.id.game_anim_add:
+
+                break;
+            case R.id.test_anim:
+                studyStartActivity(TestAnimActivity.class);
+                break;
+            case R.id.socket_break:
+                studyStartActivity(SocketBreakActivity.class);
+                break;
+            case R.id.log:
+                studyStartActivity(LogActivity.class);
+                break;
+            case R.id.qq:
+                studyStartActivity(QQLoginActivity.class);
+                break;
+            case R.id.wechat:
+                studyStartActivity(WechatLoginActivity.class);
+                break;
+            case R.id.bind:
+                studyStartActivity(BindActivity.class);
+                break;
+            case R.id.edit:
+                studyStartActivity(EditActivity.class);
+                break;
+            case R.id.sound:
+                studyStartActivity(SoundActivity.class);
+                break;
+            case R.id.ratingbar:
+                studyStartActivity(RatingActivity.class);
                 break;
         }
     }
