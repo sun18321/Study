@@ -119,6 +119,7 @@ public class GameSocket {
             }
         }
     };
+    private InputStream mInputStream;
 
     public void releaseSocket() {
         if (mSocket != null) {
@@ -127,8 +128,8 @@ public class GameSocket {
 //                mSocket.shutdownOutput();
 //                InputStream inputStream = mSocket.getInputStream();
 //                OutputStream outputStream = mSocket.getOutputStream();
-//                inputStream.close();
-//                outputStream.close();
+                mInputStream.close();
+                mOutputStream.close();
                 mSocket.close();
                 mSocket = null;
                 mHandler.removeMessages(HANDLER_HEART);
@@ -321,16 +322,16 @@ public class GameSocket {
         Gson gson = null;
         @Override
         public void run() {
-            InputStream inputStream = null;
+            mInputStream = null;
             try {
-                inputStream = mSocket.getInputStream();
+                mInputStream = mSocket.getInputStream();
             } catch (IOException e) {
                 e.printStackTrace();
             }
             System.out.println("ReadThread获取socket的流");
             while (mSocket != null && !threadOver) {
                 try {
-                    InputStreamReader isr = new InputStreamReader(inputStream);
+                    InputStreamReader isr = new InputStreamReader(mInputStream);
                     char[] charsbuffer = new char[1024];
                     int length = 0;
                     int total = 0;

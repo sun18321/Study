@@ -13,12 +13,15 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ProgressBar;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.sun.application.MyApplication;
 import com.sun.bean.WorkUpdateBean;
+import com.sun.okhttp.CookiesManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,6 +48,8 @@ public class WorkUpdateActivity extends AppCompatActivity {
     private long lastDownloadId = 0;
     private MaterialDialog mMaterialDialog;
     private final int DOWN_APK = 1002;
+    private final String SERVER_URL = "http://phone.hainantaohua.com/";
+    private final String getLiveListUrl = SERVER_URL + "live/hot";
 
     private Handler mHandler = new Handler() {
 
@@ -70,7 +75,51 @@ public class WorkUpdateActivity extends AppCompatActivity {
 
         imitateLogin();
 
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.cookieJar(new CookiesManager());
+
 //        checkUpdate();
+
+        initNewCookie();
+        findViewById(R.id.btn_live).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OkHttpClient okHttpClient = new OkHttpClient.Builder().cookieJar(new CookiesManager()).build();
+                Request request = new Request.Builder().url(getLiveListUrl).build();
+                okHttpClient.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        Log.d("company", "new_live" + response.body().string());
+                    }
+                });
+
+            }
+        });
+    }
+
+    private void initNewCookie() {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().cookieJar(new CookiesManager()).build();
+        FormBody formBody = new FormBody.Builder().add("account", "18555556688")
+                .add("pwd", "bfd59291e825b5f2bbf1eb76569f8fe7")
+                .build();
+        Request request = new Request.Builder().post(formBody).url(LOGIN_URL).build();
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.d("company", "newcookie" + response.body().string());
+            }
+        });
+
     }
 
     private void imitateLogin() {
@@ -94,6 +143,7 @@ public class WorkUpdateActivity extends AppCompatActivity {
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder().cookieJar(new CookieJar() {
             private final HashMap<String, List<Cookie>> cookieStore = new HashMap<>();
+
             @Override
             public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
                 cookieStore.put(url.host(), cookies);
@@ -136,8 +186,6 @@ public class WorkUpdateActivity extends AppCompatActivity {
                 System.out.println("headers的size" + headers.size());
                 System.out.println("header-----" + headers);
 //                headers.
-
-
             }
         });
     }
@@ -151,23 +199,23 @@ public class WorkUpdateActivity extends AppCompatActivity {
         }).start();*/
         OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
         Request request = new Request.Builder().get().url("http://phone.52mdb.cc/index/sync?system_name=").build();
-            okHttpClient.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
 
-                }
+            }
 
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    String string = response.body().string();
-                    Gson gson = new Gson();
-                    final WorkUpdateBean workUpdateBean = gson.fromJson(string, WorkUpdateBean.class);
-                    System.out.println("访问body" + string);
-                    System.out.println("更新网址" + workUpdateBean.getUpnew().getUpdateUrl());
-                    mHandler.sendEmptyMessage(DOWN_APK);
-                    downLoadApk(workUpdateBean.getUpnew().getUpdateUrl());
-                }
-            });
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String string = response.body().string();
+                Gson gson = new Gson();
+                final WorkUpdateBean workUpdateBean = gson.fromJson(string, WorkUpdateBean.class);
+                System.out.println("访问body" + string);
+                System.out.println("更新网址" + workUpdateBean.getUpnew().getUpdateUrl());
+                mHandler.sendEmptyMessage(DOWN_APK);
+                downLoadApk(workUpdateBean.getUpnew().getUpdateUrl());
+            }
+        });
 
     }
 
@@ -189,8 +237,6 @@ public class WorkUpdateActivity extends AppCompatActivity {
         }).start();*/
 
 //        }
-
-
 
 
 //        if (mMaterialDialog == null) {

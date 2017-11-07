@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!--<com.sun.advertise.CardViewPager-->
+        <!--android:id="@+id/ad_pager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp">-->
+
+    <!--</com.sun.advertise.CardViewPager>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        >
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ad_pager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        >
+
+    </android.support.v4.view.ViewPager>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/ad_list"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </ListView>
+</LinearLayout>

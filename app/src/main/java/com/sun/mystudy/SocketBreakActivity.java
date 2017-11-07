@@ -21,7 +21,7 @@ public class SocketBreakActivity extends AppCompatActivity {
     private void init() {
         mBtn_break = (Button) findViewById(R.id.btn_break);
         if (mGameSocket == null) {
-            mGameSocket = new GameSocket(this, "139.199.184.20", 9501, "14321521", "14321521");
+            mGameSocket = new GameSocket(this, "139.199.65.19", 9501, "14321521", "14321521");
         }
         mBtn_break.setOnClickListener(new View.OnClickListener() {
             @Override

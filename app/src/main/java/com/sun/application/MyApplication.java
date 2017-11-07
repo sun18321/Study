@@ -1,6 +1,7 @@
 package com.sun.application;
 
 import android.app.Application;
+import android.content.Context;
 import android.util.Log;
 
 import com.baidu.location.BDLocation;
@@ -22,6 +23,8 @@ public class MyApplication extends Application {
 
     public static String cookie;
 
+    public static Context mContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -35,6 +38,7 @@ public class MyApplication extends Application {
 //        mLocationClient.start();
 //
 //        initImageLoader();
+        mContext = getApplicationContext();
 
     }
 

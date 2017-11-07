@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/meinv"
+    >
+    <LinearLayout
+        android:id="@+id/ll_move"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:visibility="gone"
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+        </ListView>
+
+
+        <ScrollView
+            android:id="@+id/ll_edit"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <EditText
+                android:layout_gravity="center"
+                android:id="@+id/edit"
+                android:background="@null"
+                android:hint="哎呦喂"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_soft"
+                android:text="soft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_move"
+                android:text="move"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn_back"
+                android:text="back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_fill"
+                android:text="fill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_new"
+                android:text="new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_fill"
+            android:layout_width="match_parent"
+            android:layout_height="217dp"
+            android:visibility="gone"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_gravity="center"
+                android:text="你瞅啥"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

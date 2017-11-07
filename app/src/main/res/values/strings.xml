@@ -1,5 +1,8 @@
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
     <string name="app_name">MyStudy</string>
     <string name="title_activity_my_animation">MyAnimationActivity</string>
     <string name="title_activity_game_anim">GameAnimActivity</string>
+    <string name="dialog_input_text_hint">开启弹幕互动吧</string>
 </resources>

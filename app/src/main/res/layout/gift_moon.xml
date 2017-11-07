@@ -138,7 +138,6 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="32.0dip"
-            android:layout_alignBottom="@+id/crown_iv"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="-40dp"
             >

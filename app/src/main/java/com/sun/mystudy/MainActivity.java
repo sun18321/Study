@@ -2,8 +2,10 @@ package com.sun.mystudy;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.constraint.solver.Cache;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -66,6 +68,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
+        PackageManager pm = getPackageManager();
+        if (pm != null) {
+            try {
+                ApplicationInfo applicationInfo = pm.getApplicationInfo(getPackageName(), pm.GET_META_DATA);
+                if (applicationInfo != null) {
+                    String channel = applicationInfo.metaData.getString("my_channel");
+                    Toast.makeText(this, "渠道" + channel, Toast.LENGTH_LONG).show();
+                }
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+
 
         mRefresh = (Button) findViewById(R.id.refresh);
         mRefresh.setOnClickListener(this);
@@ -121,6 +139,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.edit).setOnClickListener(this);
         findViewById(R.id.sound).setOnClickListener(this);
         findViewById(R.id.ratingbar).setOnClickListener(this);
+        findViewById(R.id.box).setOnClickListener(this);
+        findViewById(R.id.my_five).setOnClickListener(this);
+        findViewById(R.id.five_corner).setOnClickListener(this);
+        findViewById(R.id.pop_anim).setOnClickListener(this);
+        findViewById(R.id.deep_anim).setOnClickListener(this);
+        findViewById(R.id.input_key).setOnClickListener(this);
+        findViewById(R.id.advertise).setOnClickListener(this);
+        findViewById(R.id.advertise_two).setOnClickListener(this);
+        findViewById(R.id.broadReceiver).setOnClickListener(this);
+        findViewById(R.id.cardview).setOnClickListener(this);
+        findViewById(R.id.sanguo).setOnClickListener(this);
+        findViewById(R.id.cache).setOnClickListener(this);
+        findViewById(R.id.company).setOnClickListener(this);
+        findViewById(R.id.test_interface).setOnClickListener(this);
 //        findViewById(R.id.layout).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -277,6 +309,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.ratingbar:
                 studyStartActivity(RatingActivity.class);
+                break;
+            case R.id.box:
+                studyStartActivity(BoxActivity.class);
+                break;
+            case R.id.my_five:
+                studyStartActivity(MyFiveActivity.class);
+                break;
+            case R.id.five_corner:
+//                studyStartActivity();
+                break;
+            case R.id.pop_anim:
+                studyStartActivity(PopAnimActivity.class);
+                break;
+            case R.id.deep_anim:
+                studyStartActivity(DeepAnimationActivity.class);
+                break;
+            case R.id.input_key:
+                studyStartActivity(InputKeyActivity.class);
+                break;
+            case R.id.advertise:
+                studyStartActivity(AdvertiseActivity.class);
+                break;
+            case R.id.advertise_two:
+                studyStartActivity(NewAdvertiseActivity.class);
+                break;
+            case R.id.broadReceiver:
+                studyStartActivity(BroadcastReceiverActivity.class);
+                break;
+            case R.id.cardview:
+                studyStartActivity(CardviewActivity.class);
+                break;
+            case R.id.sanguo:
+                studyStartActivity(SanguoActivity.class);
+                break;
+            case R.id.cache:
+                studyStartActivity(CacheActivity.class);
+                break;
+            case R.id.company:
+                studyStartActivity(CompanyActivity.class);
+                break;
+            case R.id.test_interface:
+                studyStartActivity(InterfaceActivity.class);
                 break;
         }
     }

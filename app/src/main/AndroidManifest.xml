@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.sun.mystudy">
+          package="com.sun.mystudy"
+          android:versionCode="20">
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -187,6 +188,44 @@
         <activity android:name=".SoundActivity">
         </activity>
         <activity android:name=".RatingActivity">
+        </activity>
+        <activity android:name=".BoxActivity">
+        </activity>
+        <activity android:name=".MyFiveActivity">
+        </activity>
+        <activity
+            android:name=".PopAnimActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".DeepAnimationActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".InputKeyActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity android:name=".AdvertiseActivity">
+        </activity>
+        <activity android:name=".NewAdvertiseActivity">
+        </activity>
+        <activity android:name=".BroadcastReceiverActivity">
+        </activity>
+        <activity android:name=".CardviewActivity">
+        </activity>
+        <activity android:name=".SanguoActivity">
+        </activity>
+        <activity android:name=".CacheActivity">
+        </activity>
+
+        <meta-data
+            android:name="my_channel"
+            android:value="${channel_value}"/>
+
+        <activity android:name=".CompanyActivity">
+        </activity>
+        <activity android:name=".InterfaceActivity">
         </activity>
     </application>
 

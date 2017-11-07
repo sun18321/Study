@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true"
+    >
+
+    <item android:drawable="@mipmap/anim_nhbox0"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox1"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox2"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox3"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox4"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox5"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox6"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox7"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox8"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox9"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox10"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox11"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox12"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox13"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox14"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox15"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox16"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox17"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox18"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox19"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox20"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox21"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox22"
+        android:duration="200"
+        />
+  <!--  <item android:drawable="@mipmap/anim_nhbox23"
+        android:duration="200"
+        />
+    <item android:drawable="@mipmap/anim_nhbox24"
+        android:duration="200"
+        />-->
+
+</animation-list>

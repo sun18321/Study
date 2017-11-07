@@ -4,4 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="room_gift_text_shadow">#ff99cc00</color>
+
+    <color name="color_input_dialog_background">#b4ffffff</color>
+    <color name="colorTransparentBlack">#44777777</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="c9">#777777</color>
+
+    <color name="white">#ffffff</color>
+
 </resources>

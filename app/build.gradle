@@ -8,8 +8,6 @@ android {
         applicationId "com.sun.mystudy"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
     }
     buildTypes {
         release {
@@ -23,6 +21,14 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+
+    productFlavors {
+        huawei {}
+        samsung {}
+        vivo {}
+    }
+    productFlavors.all { flavor -> flavor.manifestPlaceholders = [channel_value: name] }
+
 
 }
 

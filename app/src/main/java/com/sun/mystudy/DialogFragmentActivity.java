@@ -23,11 +23,11 @@ public class DialogFragmentActivity extends AppCompatActivity implements View.On
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.first:
-                MyDialogFragment fragment = new MyDialogFragment(R.layout.dialogfragment_contentiew);
+                MyDialogFragment fragment = MyDialogFragment.newInstance(R.layout.dialogfragment_contentiew);
                 fragment.show(getFragmentManager(), "dialog");
                 break;
             case R.id.second:
-                MyDialogFragment fragment1 = new MyDialogFragment(R.layout.dialogfragment_login);
+                MyDialogFragment fragment1 = MyDialogFragment.newInstance(R.layout.dialogfragment_login);
                 fragment1.show(getFragmentManager(),"fragment1");
                 break;
             case R.id.third:
