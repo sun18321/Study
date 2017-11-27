@@ -2,6 +2,7 @@ package com.sun.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.util.Log;
 
 import com.baidu.location.BDLocation;
@@ -9,8 +10,13 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
+import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
+import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.sun.mystudy.R;
 
 import java.util.List;
 
@@ -24,6 +30,7 @@ public class MyApplication extends Application {
     public static String cookie;
 
     public static Context mContext;
+    private static DisplayImageOptions options;
 
     @Override
     public void onCreate() {
@@ -39,7 +46,32 @@ public class MyApplication extends Application {
 //
 //        initImageLoader();
         mContext = getApplicationContext();
+        initImageLoader(getApplicationContext());
 
+    }
+
+    private static void initImageLoader(Context context) {
+        ImageLoaderConfiguration config =
+                new ImageLoaderConfiguration.Builder(context).threadPriority(Thread.NORM_PRIORITY - 2)
+                        .denyCacheImageMultipleSizesInMemory()
+                        .memoryCache(new WeakMemoryCache())
+                        // .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 *
+                        // 1024))
+                        .discCacheFileNameGenerator(new HashCodeFileNameGenerator())
+                        .tasksProcessingOrder(QueueProcessingType.LIFO)
+                        .build();
+
+        ImageLoader.getInstance().init(config);
+        options = new DisplayImageOptions.Builder().showStubImage(R.drawable.ic_launcher)
+                .showImageForEmptyUri(R.drawable.ic_launcher)
+                .showImageOnFail(R.drawable.ic_launcher)
+                .cacheOnDisk(true)
+                .cacheInMemory(true)
+                //    // 设置图片以如何的编码方式显示
+                //.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
+                //    // 设置图片的解码类型
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .build();
     }
 
     public  static String getCookie() {

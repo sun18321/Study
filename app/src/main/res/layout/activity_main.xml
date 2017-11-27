@@ -605,6 +605,42 @@
                     />
 
                 <Button
+                    android:id="@+id/dispatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button
+                    android:id="@+id/anim_listener"
+                    android:text="anim_lis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button
+                    android:id="@+id/new_pull"
+                    android:text="new_pull"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/qiniu"
+                    android:text="qiniu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button
+                    android:id="@+id/new_chat"
+                    android:text="newchat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -619,6 +655,7 @@
                     android:layout_height="wrap_content"
                     />
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

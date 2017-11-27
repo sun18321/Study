@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.constraint.solver.Cache;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -82,9 +81,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
-
-
-
         mRefresh = (Button) findViewById(R.id.refresh);
         mRefresh.setOnClickListener(this);
         mNetRequest = (Button) findViewById(R.id.net_request);
@@ -153,6 +149,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.cache).setOnClickListener(this);
         findViewById(R.id.company).setOnClickListener(this);
         findViewById(R.id.test_interface).setOnClickListener(this);
+        findViewById(R.id.dispatch).setOnClickListener(this);
+        findViewById(R.id.anim_listener).setOnClickListener(this);
+        findViewById(R.id.new_pull).setOnClickListener(this);
+        findViewById(R.id.qiniu).setOnClickListener(this);
+        findViewById(R.id.new_chat).setOnClickListener(this);
 //        findViewById(R.id.layout).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -351,6 +352,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.test_interface:
                 studyStartActivity(InterfaceActivity.class);
+                break;
+            case R.id.dispatch:
+                studyStartActivity(DispatchActivity.class);
+                break;
+            case R.id.anim_listener:
+                studyStartActivity(AnimListenerActivity.class);
+                break;
+            case R.id.new_pull:
+                studyStartActivity(NewRefreshActivity.class);
+                break;
+            case R.id.qiniu:
+                studyStartActivity(QiuniuActivity.class);
+                break;
+            case R.id.new_chat:
+                studyStartActivity(NewChatActivity.class);
                 break;
         }
     }

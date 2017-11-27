@@ -22,19 +22,19 @@ public class WebviewActivity extends AppCompatActivity {
     private void init() {
         mMyWebview = (WebView) findViewById(R.id.webview);
 
-        mMyWebview.setWebViewClient(new WebViewClient(){
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                System.out.println("怎么没东西");
-                return true;
-            }
-
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-
-            }
-        });
+//        mMyWebview.setWebViewClient(new WebViewClient(){
+//            @Override
+//            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+//                System.out.println("怎么没东西");
+//                return true;
+//            }
+//
+//            @Override
+//            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+//                super.onPageStarted(view, url, favicon);
+//
+//            }
+//        });
 
     }
 }

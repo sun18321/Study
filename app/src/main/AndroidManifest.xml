@@ -227,6 +227,20 @@
         </activity>
         <activity android:name=".InterfaceActivity">
         </activity>
+        <activity android:name=".DispatchActivity">
+        </activity>
+        <activity android:name=".AnimListenerActivity">
+        </activity>
+        <activity
+            android:name=".NewRefreshActivity"
+            android:theme="@style/AppTheme.FullScreen">
+        </activity>
+        <activity
+            android:name=".QiuniuActivity"
+            android:theme="@style/AppThemeFullscreen">
+        </activity>
+        <activity android:name=".NewChatActivity">
+        </activity>
     </application>
 
 </manifest>

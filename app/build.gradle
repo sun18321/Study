@@ -19,6 +19,7 @@ android {
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
+            jniLibs.srcDirs = ['libs', 'src/main/jniLibs']
         }
     }
 
@@ -46,5 +47,9 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.1'
     compile 'com.afollestad.material-dialogs:core:0.9.1.0'
     compile 'com.afollestad.material-dialogs:commons:0.9.1.0'
+//    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+//    compile files('libs/pldroid-player-2.0.3.jar')
+//    compile 'com.qiniu:happy-dns:0.2.+'
+//    compile 'com.journeyapps:zxing-android-embedded:3.0.2@aar'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
