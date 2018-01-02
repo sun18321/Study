@@ -31,6 +31,8 @@ public class NewChatActivity extends AppCompatActivity {
     private Paint mPaint;
     private LinearGradient linearGradient;
     private int layerId;
+    private int mTargetPosition;
+    private boolean mShouldScroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,19 @@ public class NewChatActivity extends AppCompatActivity {
         mRecy_chat = (RecyclerView) findViewById(R.id.recyclerview_chat);
         mRecy_chat.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         mAdapter = new ChatAdapter();
+
+        mRecy_chat.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (mShouldScroll) {
+                    mShouldScroll = false;
+                    upgradeSmooth(mTargetPosition);
+                }
+            }
+        });
+
+
         mRecy_chat.setAdapter(mAdapter);
         doTopGradualEffect();
 
@@ -78,7 +93,9 @@ public class NewChatActivity extends AppCompatActivity {
         findViewById(R.id.btn_data).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //当前可见recyclerview第一条在整个recyclerview中是第几条
                 int first = mRecy_chat.getChildLayoutPosition(mRecy_chat.getChildAt(0));
+                //当前可见recyclerview最后一条在整个recyclerview中是第几条
                 int last = mRecy_chat.getChildLayoutPosition(mRecy_chat.getChildAt(mRecy_chat.getChildCount() - 1));
                 Log.d("position", "first--" + first + "--" + "last--" + last + "--" + mRecy_chat.getChildCount());
                 int top_3 = mRecy_chat.getChildAt(3).getTop();
@@ -103,12 +120,17 @@ public class NewChatActivity extends AppCompatActivity {
 
         if (position < first) {
             mRecy_chat.smoothScrollToPosition(position);
-        } else if (position > first && position < last) {
+        } else if (position >= first && position <= last) {
             int movePosition = position - first;
             int top = mRecy_chat.getChildAt(movePosition).getTop();
             mRecy_chat.smoothScrollBy(0, top);
+        } else {
+            mRecy_chat.smoothScrollToPosition(position);
+            mTargetPosition = position;
+            mShouldScroll = true;
         }
     }
+
 
     public void doTopGradualEffect(){
         if(mRecy_chat == null){

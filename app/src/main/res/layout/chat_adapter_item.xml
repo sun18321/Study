@@ -7,10 +7,10 @@
         android:id="@+id/tv_chat"
         android:text="123345"
         android:textColor="#ffffff"
+        android:background="@drawable/chat_bg"
         android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/chat_bg"
         android:layout_marginBottom="5dp"
         />
 

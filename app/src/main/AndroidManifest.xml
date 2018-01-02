@@ -233,7 +233,8 @@
         </activity>
         <activity
             android:name=".NewRefreshActivity"
-            android:theme="@style/AppTheme.FullScreen">
+            android:theme="@style/AppTheme.NoActionBar"
+            >
         </activity>
         <activity
             android:name=".QiuniuActivity"
@@ -241,6 +242,11 @@
         </activity>
         <activity android:name=".NewChatActivity">
         </activity>
+        <activity android:name=".LibgdxActivity">
+        </activity>
+        <activity android:name=".CopyGdxActivity">
+        </activity>
+
     </application>
 
 </manifest>

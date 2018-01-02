@@ -1,0 +1,153 @@
+
+huojian.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+44
+  rotate: false
+  xy: 2, 2
+  size: 44, 56
+  orig: 44, 56
+  offset: 0, 0
+  index: -1
+huo0001
+  rotate: false
+  xy: 2, 60
+  size: 135, 80
+  orig: 135, 80
+  offset: 0, 0
+  index: -1
+huo0002
+  rotate: false
+  xy: 232, 174
+  size: 135, 80
+  orig: 135, 80
+  offset: 0, 0
+  index: -1
+huo0004
+  rotate: false
+  xy: 369, 174
+  size: 135, 80
+  orig: 135, 80
+  offset: 0, 0
+  index: -1
+huo0005
+  rotate: false
+  xy: 506, 174
+  size: 135, 80
+  orig: 135, 80
+  offset: 0, 0
+  index: -1
+huo0007
+  rotate: false
+  xy: 643, 174
+  size: 135, 80
+  orig: 135, 80
+  offset: 0, 0
+  index: -1
+huo0008
+  rotate: false
+  xy: 780, 174
+  size: 135, 80
+  orig: 135, 80
+  offset: 0, 0
+  index: -1
+huojian
+  rotate: false
+  xy: 2, 142
+  size: 228, 112
+  orig: 228, 112
+  offset: 0, 0
+  index: -1
+mjiao
+  rotate: false
+  xy: 1000, 214
+  size: 22, 40
+  orig: 22, 40
+  offset: 0, 0
+  index: -1
+mshen
+  rotate: false
+  xy: 917, 193
+  size: 45, 61
+  orig: 45, 61
+  offset: 0, 0
+  index: -1
+mshouL
+  rotate: false
+  xy: 964, 218
+  size: 34, 36
+  orig: 34, 36
+  offset: 0, 0
+  index: -1
+mshouR
+  rotate: false
+  xy: 311, 85
+  size: 32, 38
+  orig: 32, 38
+  offset: 0, 0
+  index: -1
+mtou
+  rotate: false
+  xy: 232, 84
+  size: 77, 88
+  orig: 77, 88
+  offset: 0, 0
+  index: -1
+mtou2
+  rotate: false
+  xy: 95, 32
+  size: 41, 26
+  orig: 41, 26
+  offset: 0, 0
+  index: -1
+wshen
+  rotate: false
+  xy: 311, 125
+  size: 51, 47
+  orig: 51, 47
+  offset: 0, 0
+  index: -1
+wshouL
+  rotate: false
+  xy: 917, 178
+  size: 22, 13
+  orig: 22, 13
+  offset: 0, 0
+  index: -1
+wshouR
+  rotate: false
+  xy: 232, 51
+  size: 65, 31
+  orig: 65, 31
+  offset: 0, 0
+  index: -1
+wtou
+  rotate: false
+  xy: 139, 38
+  size: 91, 102
+  orig: 91, 102
+  offset: 0, 0
+  index: -1
+wtou2
+  rotate: false
+  xy: 48, 16
+  size: 45, 42
+  orig: 45, 42
+  offset: 0, 0
+  index: -1
+wtui
+  rotate: false
+  xy: 364, 131
+  size: 27, 41
+  orig: 27, 41
+  offset: 0, 0
+  index: -1
+wxiu
+  rotate: false
+  xy: 393, 152
+  size: 41, 20
+  orig: 41, 20
+  offset: 0, 0
+  index: -1

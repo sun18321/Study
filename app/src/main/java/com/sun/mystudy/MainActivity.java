@@ -154,6 +154,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.new_pull).setOnClickListener(this);
         findViewById(R.id.qiniu).setOnClickListener(this);
         findViewById(R.id.new_chat).setOnClickListener(this);
+        findViewById(R.id.libgdx).setOnClickListener(this);
+        findViewById(R.id.copy_gdx).setOnClickListener(this);
 //        findViewById(R.id.layout).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -367,6 +369,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.new_chat:
                 studyStartActivity(NewChatActivity.class);
+                break;
+            case R.id.libgdx:
+                studyStartActivity(LibgdxActivity.class);
+                break;
+            case R.id.copy_gdx:
+                studyStartActivity(CopyGdxActivity.class);
                 break;
         }
     }

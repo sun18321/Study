@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_first"
+        android:icon="@mipmap/bottom_first"
+        android:title="第一"/>
+    <item
+        android:id="@+id/bottom_second"
+        android:icon="@mipmap/bottom_second"
+        android:title="第二"/>
+    <item
+        android:id="@+id/bottom_third"
+        android:icon="@mipmap/bottom_third"
+        android:title="第三"/>
 
 
 </menu>
