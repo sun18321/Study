@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PullToRefresh/PullToRefresh.iml" filepath="$PROJECT_DIR$/PullToRefresh/PullToRefresh.iml" />
+      <module fileurl="file://D:\WORK\study\Study\PullToRefresh\PullToRefresh.iml" filepath="D:\WORK\study\Study\PullToRefresh\PullToRefresh.iml" />
       <module fileurl="file://$PROJECT_DIR$/Study.iml" filepath="$PROJECT_DIR$/Study.iml" />
+      <module fileurl="file://D:\WORK\study\Study\Study.iml" filepath="D:\WORK\study\Study\Study.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\WORK\study\Study\app\app.iml" filepath="D:\WORK\study\Study\app\app.iml" />
     </modules>
   </component>
 </project>
