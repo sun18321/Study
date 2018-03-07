@@ -52,7 +52,7 @@ public class SoundActivity extends AppCompatActivity {
         mSound_faild = mSoundPool.load(this, R.raw.guessnosound,0);
         mSound_bet = mSoundPool.load(this, R.raw.redpocketsound, 0);
         mSound_water = mSoundPool.load(this, R.raw.winflygoldsound, 0);
-        mSound_bet_new = mSoundPool.load(this, R.raw.ove_bet, 0);
+//        mSound_bet_new = mSoundPool.load(this, R.raw.ove_bet, 0);
 
     }
 
