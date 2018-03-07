@@ -264,6 +264,17 @@
 
 
 
+        <receiver
+            android:name=".OrderBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="order.broadcast"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".SaveDataActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -56,6 +56,8 @@ dependencies {
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
     compile 'com.github.mmin18:realtimeblurview:1.0.6'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'org.greenrobot:greendao:3.2.2'
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

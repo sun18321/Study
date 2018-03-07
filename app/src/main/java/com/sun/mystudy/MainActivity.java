@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 import com.sun.anim.MyAnimationActivity;
 import com.sun.dialog.DialogActivity;
 import com.sun.example.MediaProjectionDemo;
+import com.sun.sql.Car;
+import com.sun.sql.Person;
 import com.sun.util.Utils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mCommon_listview;
     private Button mList_itemClick;
 
+    private String sb = "http://phone.izhibo88.cn /index/sync?system_name=android&system_version=6.0&platform=HUAWEI+GRA-UL10&carrier=&udid=866697020402174&app_version=200&app_channel=_360&app=AULive";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //        initPermission();
         initView();
+
+        char c = sb.charAt(24);
+        Log.d("第24个", "" + c);
+
+
     }
 
     private void initPermission() {
@@ -157,6 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.libgdx).setOnClickListener(this);
         findViewById(R.id.copy_gdx).setOnClickListener(this);
         findViewById(R.id.camera).setOnClickListener(this);
+        findViewById(R.id.save_data).setOnClickListener(this);
 //        findViewById(R.id.layout).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -379,6 +390,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.camera:
                 studyStartActivity(CameraActivity.class);
+                break;
+            case R.id.save_data:
+//                studyStartActivity(SaveDataActivity.class);
+
+                Person person = new Person();
+                person.setName("sun");
+                person.setAge(18);
+                person.setMale(true);
+
+                Car car = new Car();
+                car.setName("martin");
+                car.setPrice(10000);
+                car.setQuick(true);
+
+                Intent intent = new Intent(MainActivity.this, SaveDataActivity.class);
+                intent.putExtra("person", person);
+                intent.putExtra("car", car);
+                startActivity(intent);
+
                 break;
         }
     }

@@ -3,6 +3,7 @@ package com.sun.application;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.baidu.location.BDLocation;
@@ -233,5 +234,12 @@ public class MyApplication extends Application {
         public void onConnectHotSpotMessage(String s, int i) {
 
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+
+        MultiDex.install(this);
     }
 }

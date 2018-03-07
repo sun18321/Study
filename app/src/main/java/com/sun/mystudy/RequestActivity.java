@@ -3,6 +3,7 @@ package com.sun.mystudy;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.sun.util.MobileConfig;
@@ -11,6 +12,7 @@ import com.sun.util.Utils;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -30,8 +32,8 @@ public class RequestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
 
-        init();
-        init2();
+//        init();
+//        init2();
 //        init3();
 //        init4();
         String login =
@@ -52,6 +54,38 @@ public class RequestActivity extends AppCompatActivity {
                         + "&app_channel="
                         + ""
                         + "&app=AULive";
+
+
+        findViewById(R.id.btn_first).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                RequestBody requestBody  = new FormBody.Builder()
+//                        .add("phone","18555556688")
+//                        .build();
+//                Request request = new Request.Builder().url("http://phone.izhibo88.cn/reg/sendsms").post(requestBody).build();
+//                OkHttpClient okHttpClient = new OkHttpClient();
+
+                Request request = new Request.Builder().url("http://phone.izhibo88.cn/reg/resetpwd").build();
+                OkHttpClient okHttpClient = new OkHttpClient.Builder().readTimeout(100, TimeUnit.SECONDS)
+                        .writeTimeout(100,TimeUnit.SECONDS).connectTimeout(100,TimeUnit.SECONDS).build();
+
+
+
+                Call call = okHttpClient.newCall(request);
+                call.enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        Log.d("sendsms", "访问失败");
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String string = response.body().string();
+                        Log.d("sendsms", "访问数据" + string);
+                    }
+                });
+            }
+        });
     }
 
     private void init4() {

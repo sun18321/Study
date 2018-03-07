@@ -55,6 +55,9 @@ public class NewChatActivity extends AppCompatActivity {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
+
+                Log.d("position", "scrollListener");
+
                 if (mShouldScroll) {
                     mShouldScroll = false;
                     upgradeSmooth(mTargetPosition);
@@ -84,7 +87,7 @@ public class NewChatActivity extends AppCompatActivity {
                 }
                 mList.remove(mList.size() - 1);
                 mAdapter.notifyDataSetChanged();
-                mRecy_chat.scrollToPosition(mList.size()-1);
+                mRecy_chat.smoothScrollToPosition(mList.size()-1);
             }
         });
 
@@ -117,6 +120,8 @@ public class NewChatActivity extends AppCompatActivity {
     private void upgradeSmooth(int position) {
         int first = mRecy_chat.getChildLayoutPosition(mRecy_chat.getChildAt(0));
         int last = mRecy_chat.getChildLayoutPosition(mRecy_chat.getChildAt(mRecy_chat.getChildCount() - 1));
+
+        Log.d("position", "upgrade");
 
         if (position < first) {
             mRecy_chat.smoothScrollToPosition(position);
@@ -190,7 +195,7 @@ public class NewChatActivity extends AppCompatActivity {
 
 
 
-    class ChatHolder extends RecyclerView.ViewHolder {
+    static class ChatHolder extends RecyclerView.ViewHolder {
         TextView tv_chat;
         public ChatHolder(View itemView) {
             super(itemView);
