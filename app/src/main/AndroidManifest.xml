@@ -3,11 +3,11 @@
           package="com.sun.mystudy"
           android:versionCode="20">
 
-    <!--<uses-permission android:name="android.permission.CAMERA"/>-->
+    <!-- <uses-permission android:name="android.permission.CAMERA"/> -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
-    <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>-->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
+    <!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> -->
     <!-- 这个权限用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <!-- 这个权限用于访问GPS定位 -->
@@ -21,12 +21,11 @@
     <!-- 用于读取手机当前的状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
     <!-- 访问网络，网络定位需要上网 -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- SD卡读取权限，用户写入离线定位数据 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-
 
     <application
         android:name="com.sun.application.MyApplication"
@@ -248,21 +247,16 @@
         </activity>
         <activity android:name=".CameraActivity">
         </activity>
-        
+
         <provider
-            android:authorities="com.sun.mystudy.provider"
             android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.sun.mystudy.provider"
             android:exported="false"
-            android:grantUriPermissions="true"
-            >
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"
-                />
-
+                android:resource="@xml/file_paths"/>
         </provider>
-
-
 
         <receiver
             android:name=".OrderBroadcastReceiver"
@@ -274,6 +268,8 @@
         </receiver>
 
         <activity android:name=".SaveDataActivity">
+        </activity>
+        <activity android:name=".HttpActivity">
         </activity>
     </application>
 

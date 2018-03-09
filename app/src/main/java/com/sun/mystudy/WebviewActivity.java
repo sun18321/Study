@@ -22,6 +22,10 @@ public class WebviewActivity extends AppCompatActivity {
     private void init() {
         mMyWebview = (WebView) findViewById(R.id.webview);
 
+        mMyWebview.getSettings().setJavaScriptEnabled(true);
+        mMyWebview.setWebViewClient(new WebViewClient());
+        mMyWebview.loadUrl("http://www.baidu.com");
+
 //        mMyWebview.setWebViewClient(new WebViewClient(){
 //            @Override
 //            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {

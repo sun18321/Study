@@ -686,11 +686,8 @@
                     />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
-
-                <Button
+                    android:id="@+id/http"
+                    android:text="http"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />

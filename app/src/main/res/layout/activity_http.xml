@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sun.mystudy.HttpActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btn_one"
+        android:text="one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+     <Button
+         android:id="@+id/okhttp"
+         android:text="okhttp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"/>
+
+     <Button
+         android:id="@+id/json_object"
+         android:text="object"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"/>
+
+     <Button
+         android:id="@+id/gson"
+         android:text="gson"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/scroll_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

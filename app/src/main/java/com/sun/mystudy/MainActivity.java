@@ -168,6 +168,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.copy_gdx).setOnClickListener(this);
         findViewById(R.id.camera).setOnClickListener(this);
         findViewById(R.id.save_data).setOnClickListener(this);
+        findViewById(R.id.http).setOnClickListener(this);
 //        findViewById(R.id.layout).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -393,12 +394,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.save_data:
 //                studyStartActivity(SaveDataActivity.class);
-
                 Person person = new Person();
                 person.setName("sun");
                 person.setAge(18);
                 person.setMale(true);
-
                 Car car = new Car();
                 car.setName("martin");
                 car.setPrice(10000);
@@ -408,7 +407,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("person", person);
                 intent.putExtra("car", car);
                 startActivity(intent);
-
+                break;
+            case R.id.http:
+                studyStartActivity(HttpActivity.class);
                 break;
         }
     }
