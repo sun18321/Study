@@ -169,6 +169,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.camera).setOnClickListener(this);
         findViewById(R.id.save_data).setOnClickListener(this);
         findViewById(R.id.http).setOnClickListener(this);
+        findViewById(R.id.asynctask).setOnClickListener(this);
+        findViewById(R.id.service).setOnClickListener(this);
+
 //        findViewById(R.id.layout).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -410,6 +413,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.http:
                 studyStartActivity(HttpActivity.class);
+                break;
+            case R.id.asynctask:
+                studyStartActivity(AsyncTaskActivity.class);
+                break;
+            case R.id.service:
+                studyStartActivity(ServiceActivity.class);
                 break;
         }
     }

@@ -92,6 +92,9 @@ public class HttpActivity extends AppCompatActivity {
 
         List<ParseJson> list = gson.fromJson(JSON_DATA, new TypeToken<List<ParseJson>>(){}.getType());
 
+        //ParseJson的集合
+        ParseJson parseJson = list.get(0);
+
 
     }
 
@@ -106,7 +109,7 @@ public class HttpActivity extends AppCompatActivity {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 String id = jsonObject.getString("id");
                 String name = jsonObject.getString("name");
-                Object version = jsonObject.get("version");
+                Object version = jsonObject.getString("version");
                 String data = id + "--" + name + "--" + version;
                 if (i == 0) {
                     sb.append(data);
