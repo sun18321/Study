@@ -713,6 +713,8 @@
                     android:layout_height="wrap_content"
                     />
                 <Button
+                    android:id="@+id/down_service"
+                    android:text="d_service"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />

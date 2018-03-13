@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.util.Log;
@@ -18,9 +19,25 @@ public class MyService extends Service {
     private AlarmManager mAlarmManager;
     private Timer mTimer;
     private TimerTask mTimerTask;
+    private MyBind mMyBind = new MyBind();
 
     public MyService() {
     }
+
+    public class MyBind extends Binder {
+
+        public void startBind() {
+            Log.d(LOG_SERVICE, "startbind");
+        }
+
+        public int getProgress() {
+            Log.d(LOG_SERVICE, "bindprogress");
+            return 4;
+        }
+
+    }
+
+
 
     @Override
     public void onCreate() {
@@ -59,7 +76,6 @@ public class MyService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+        return mMyBind;
     }
 }

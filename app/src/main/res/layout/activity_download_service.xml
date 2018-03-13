@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sun.mystudy.ServiceActivity"
+    tools:context="com.sun.mystudy.DownloadServiceActivity"
     android:orientation="horizontal"
     >
 
@@ -14,22 +14,14 @@
         android:text="start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
     <Button
-        android:id="@+id/stop"
-        android:text="stop"
+        android:id="@+id/pause"
+        android:text="pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
     <Button
-        android:id="@+id/bind"
-        android:text="bind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/unbind"
-        android:text="unbind"
+        android:id="@+id/cancel"
+        android:text="cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

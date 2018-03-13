@@ -281,6 +281,15 @@
             android:enabled="true"
             android:exported="true">
         </service>
+
+        <activity android:name=".DownloadServiceActivity">
+        </activity>
+
+        <service
+            android:name="com.sun.myclass.DownloadService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>
