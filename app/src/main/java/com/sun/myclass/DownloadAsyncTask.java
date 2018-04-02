@@ -3,11 +3,15 @@ package com.sun.myclass;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -18,11 +22,12 @@ import okhttp3.Response;
  */
 
 public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
+    private final String LOG_DOWN = "log_down";
+
     public static final int TYPE_SUCCESS = 0;
     public static final int TYPE_PAUSED = 1;
     public static final int TYPE_FAILED = 2;
     public static final int TYPE_CANCELED = 3;
-
     private boolean isCanceled = false;
     private boolean isPaused = false;
     private int lastProgress;
@@ -31,6 +36,7 @@ public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
     public DownloadAsyncTask(DownloadListener listener) {
         this.listener = listener;
     }
+
 
 
     @Override
@@ -49,19 +55,21 @@ public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
         String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));
         String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
         file = new File(directory + fileName);
+        try {
+        Log.d(LOG_DOWN, "old" + file.length());
+        Log.d(LOG_DOWN, "url:" + downloadUrl);
+        Log.d(LOG_DOWN, "all" + getContentLength(downloadUrl));
+
         if (file.exists()) {
             downloadLength = file.length();
         }
         long contentLength = getContentLength(downloadUrl);
-        if (downloadLength == 0) {
-            return TYPE_FAILED;
-        } else if (downloadLength == contentLength) {
+        if (downloadLength == contentLength) {
             return TYPE_SUCCESS;
         }
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(downloadUrl).addHeader("RANGE", "bytes=" + downloadLength + "-").build();
-        try {
-            Response response = client.newCall(request).execute();
+        Response response = client.newCall(request).execute();
             if (response != null) {
                 is = response.body().byteStream();
                 savedFile = new RandomAccessFile(file, "rw");
@@ -97,7 +105,7 @@ public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
                     savedFile.close();
                 }
                 if (isCanceled && file != null) {
-                    file.getClass();
+                    file.delete();
                 }
             }catch (IOException e) {
                     e.printStackTrace();
@@ -147,22 +155,41 @@ public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
         }
     }
 
+//    private long getContentLength(String downloadUrl) throws IOException {
+//
+//        Log.d("length", "" + downloadUrl);
+//
+//        OkHttpClient client = new OkHttpClient();
+//        Request request = new Request.Builder()
+//                .url(downloadUrl)
+//                .build();
+//        Response response = client.newCall(request).execute();
+//        if (response != null && response.isSuccessful()) {
+//            long contentLength = response.body().contentLength();
+//            response.close();
+//            return contentLength;
+//        }
+//        return 0;
+//    }
+
     private long getContentLength(String downloadUrl) {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder().connectTimeout(10, TimeUnit.SECONDS).readTimeout(10, TimeUnit.SECONDS).writeTimeout(10, TimeUnit.SECONDS).build();
+        Log.d(LOG_DOWN, "2url:" + downloadUrl);
         Request request = new Request.Builder().url(downloadUrl).build();
         try {
             Response response = client.newCall(request).execute();
             if (response != null && response.isSuccessful()) {
                 long contentLength = response.body().contentLength();
                 response.close();
+
+                Log.d(LOG_DOWN, "len:" + contentLength);
+
                 return contentLength;
             }
-
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            return 0;
         }
+        return 0;
     }
 
     public void pauseDownload() {

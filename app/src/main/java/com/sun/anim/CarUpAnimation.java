@@ -19,6 +19,8 @@ import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.sun.mystudy.R;
 
+import io.reactivex.Observable;
+
 public class CarUpAnimation {
     private static final String DRAWABLE = "drawable://";
 
