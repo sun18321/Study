@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.sun.mystudy"
-          android:versionCode="20">
+    package="com.sun.mystudy"
+    android:versionCode="20">
 
     <!-- <uses-permission android:name="android.permission.CAMERA"/> -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
     <!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> -->
     <!-- 这个权限用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 这个权限用于访问GPS定位 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <!-- 用于读取手机当前的状态 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
     <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
     <!-- 访问网络，网络定位需要上网 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- SD卡读取权限，用户写入离线定位数据 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:name="com.sun.application.MyApplication"
@@ -36,217 +36,144 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RefreshActivity">
-        </activity>
-        <activity android:name=".RequestActivity">
-        </activity>
-        <activity android:name=".TestActivity">
-        </activity>
-        <activity android:name=".ScrollviewAndListviewActivity">
-        </activity>
-        <activity android:name=".CommonListviewActivity">
-        </activity>
-        <activity android:name=".ListViewItemClick">
-        </activity>
-        <activity android:name=".ListViewPageActivity">
-        </activity>
-        <activity android:name=".PopupWindowActivity">
-        </activity>
-        <activity android:name=".CommonRadiobuttonActivity">
-        </activity>
-        <activity android:name=".EmptyRadiobuttonActivity">
-        </activity>
+        <activity android:name=".RefreshActivity"></activity>
+        <activity android:name=".RequestActivity"></activity>
+        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".ScrollviewAndListviewActivity"></activity>
+        <activity android:name=".CommonListviewActivity"></activity>
+        <activity android:name=".ListViewItemClick"></activity>
+        <activity android:name=".ListViewPageActivity"></activity>
+        <activity android:name=".PopupWindowActivity"></activity>
+        <activity android:name=".CommonRadiobuttonActivity"></activity>
+        <activity android:name=".EmptyRadiobuttonActivity"></activity>
 
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote">
-        </service>
+            android:process=":remote"></service>
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="zLxbP56tNfd6PRoGTAkXWVxl97ODFgjY"/>
+            android:value="zLxbP56tNfd6PRoGTAkXWVxl97ODFgjY" />
         //key:开发者申请的Key
-        <activity android:name=".SpinnerActivity">
-        </activity>
-        <activity android:name=".RecyclerviewActivity">
-        </activity>
-        <activity android:name=".ScreenClickActivity">
-        </activity>
-        <activity android:name=".ListviewManyItemActivity">
-        </activity>
-        <activity android:name=".RecyclerviewManyItemActivity">
-        </activity>
-        <activity android:name=".GalleryActivity">
-        </activity>
-        <activity android:name=".ListviewLoadActivity">
-        </activity>
-        <activity android:name=".RecyclerviewLoadActivity">
-        </activity>
-        <activity android:name=".WeatherActivity">
-        </activity>
+        <activity android:name=".SpinnerActivity"></activity>
+        <activity android:name=".RecyclerviewActivity"></activity>
+        <activity android:name=".ScreenClickActivity"></activity>
+        <activity android:name=".ListviewManyItemActivity"></activity>
+        <activity android:name=".RecyclerviewManyItemActivity"></activity>
+        <activity android:name=".GalleryActivity"></activity>
+        <activity android:name=".ListviewLoadActivity"></activity>
+        <activity android:name=".RecyclerviewLoadActivity"></activity>
+        <activity android:name=".WeatherActivity"></activity>
         <activity
             android:name=".SoftKeyActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan">
-        </activity>
+            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan"></activity>
         <activity
             android:name=".GiftActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-        <activity android:name="com.sun.anim.MyAnimationActivity">
-        </activity>
-        <activity android:name=".ChronometerActivity">
-        </activity>
-        <activity android:name="com.sun.dialog.DialogActivity">
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name="com.sun.anim.MyAnimationActivity"></activity>
+        <activity android:name=".ChronometerActivity"></activity>
+        <activity android:name="com.sun.dialog.DialogActivity"></activity>
         <activity
             android:name=".DialogFragmentActivity"
-            android:theme="@style/NoTitle">
-        </activity>
-        <activity android:name=".DialogActivity">
-        </activity>
-        <activity android:name=".UpdateAppActivity">
-        </activity>
-        <activity android:name=".WorkUpdateActivity">
-        </activity>
-        <activity android:name=".ProgressActivity">
-        </activity>
+            android:theme="@style/NoTitle"></activity>
+        <activity android:name=".DialogActivity"></activity>
+        <activity android:name=".UpdateAppActivity"></activity>
+        <activity android:name=".WorkUpdateActivity"></activity>
+        <activity android:name=".ProgressActivity"></activity>
 
         <receiver android:name=".UpdateBroadcastReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".CustomDownloadActivity">
-        </activity>
-        <activity android:name=".UploadPictureActivity">
-        </activity>
-        <activity android:name=".SocketActivity">
-        </activity>
-        <activity android:name=".NewSocketActivity">
-        </activity>
+        <activity android:name=".CustomDownloadActivity"></activity>
+        <activity android:name=".UploadPictureActivity"></activity>
+        <activity android:name=".SocketActivity"></activity>
+        <activity android:name=".NewSocketActivity"></activity>
         <activity
             android:name=".WebviewActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".JsonActivity">
-        </activity>
-        <activity android:name=".CaptureScreenActivity">
-        </activity>
-        <activity android:name="com.sun.example.MediaProjectionDemo">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".JsonActivity"></activity>
+        <activity android:name=".CaptureScreenActivity"></activity>
+        <activity android:name="com.sun.example.MediaProjectionDemo"></activity>
         <activity
             android:name=".AddviewActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".LayoutActivity">
-        </activity>
-        <activity android:name=".GifActivity">
-        </activity>
-        <activity android:name=".GameAnimActivity">
-        </activity>
-        <activity android:name=".ExampleActivity">
-        </activity>
-        <activity android:name=".TestAnimActivity">
-        </activity>
-        <activity android:name=".SocketBreakActivity">
-        </activity>
-        <activity android:name=".LogActivity">
-        </activity>
-        <activity android:name=".QQLoginActivity">
-        </activity>
-        <activity android:name=".WechatLoginActivity">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".LayoutActivity"></activity>
+        <activity android:name=".GifActivity"></activity>
+        <activity android:name=".GameAnimActivity"></activity>
+        <activity android:name=".ExampleActivity"></activity>
+        <activity android:name=".TestAnimActivity"></activity>
+        <activity android:name=".SocketBreakActivity"></activity>
+        <activity android:name=".LogActivity"></activity>
+        <activity android:name=".QQLoginActivity"></activity>
+        <activity android:name=".WechatLoginActivity"></activity>
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
             android:noHistory="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="tencent1105974650"/>
+                <data android:scheme="tencent1105974650" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="behind"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-        <activity android:name=".BindActivity">
-        </activity>
-        <activity android:name=".EditActivity">
-        </activity>
-        <activity android:name=".SoundActivity">
-        </activity>
-        <activity android:name=".RatingActivity">
-        </activity>
-        <activity android:name=".BoxActivity">
-        </activity>
-        <activity android:name=".MyFiveActivity">
-        </activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".BindActivity"></activity>
+        <activity android:name=".EditActivity"></activity>
+        <activity android:name=".SoundActivity"></activity>
+        <activity android:name=".RatingActivity"></activity>
+        <activity android:name=".BoxActivity"></activity>
+        <activity android:name=".MyFiveActivity"></activity>
         <activity
             android:name=".PopAnimActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".DeepAnimationActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".InputKeyActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
-        <activity android:name=".AdvertiseActivity">
-        </activity>
-        <activity android:name=".NewAdvertiseActivity">
-        </activity>
-        <activity android:name=".BroadcastReceiverActivity">
-        </activity>
-        <activity android:name=".CardviewActivity">
-        </activity>
-        <activity android:name=".SanguoActivity">
-        </activity>
-        <activity android:name=".CacheActivity">
-        </activity>
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".AdvertiseActivity"></activity>
+        <activity android:name=".NewAdvertiseActivity"></activity>
+        <activity android:name=".BroadcastReceiverActivity"></activity>
+        <activity android:name=".CardviewActivity"></activity>
+        <activity android:name=".SanguoActivity"></activity>
+        <activity android:name=".CacheActivity"></activity>
 
         <meta-data
             android:name="my_channel"
-            android:value="${channel_value}"/>
+            android:value="${channel_value}" />
 
-        <activity android:name=".CompanyActivity">
-        </activity>
-        <activity android:name=".InterfaceActivity">
-        </activity>
-        <activity android:name=".DispatchActivity">
-        </activity>
-        <activity android:name=".AnimListenerActivity">
-        </activity>
+        <activity android:name=".CompanyActivity"></activity>
+        <activity android:name=".InterfaceActivity"></activity>
+        <activity android:name=".DispatchActivity"></activity>
+        <activity android:name=".AnimListenerActivity"></activity>
         <activity
             android:name=".NewRefreshActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".QiuniuActivity"
-            android:theme="@style/AppThemeFullscreen">
-        </activity>
-        <activity android:name=".NewChatActivity">
-        </activity>
-        <activity android:name=".LibgdxActivity">
-        </activity>
-        <activity android:name=".CopyGdxActivity">
-        </activity>
-        <activity android:name=".CameraActivity">
-        </activity>
+            android:theme="@style/AppThemeFullscreen"></activity>
+        <activity android:name=".NewChatActivity"></activity>
+        <activity android:name=".LibgdxActivity"></activity>
+        <activity android:name=".CopyGdxActivity"></activity>
+        <activity android:name=".CameraActivity"></activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -255,7 +182,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
 
         <receiver
@@ -263,36 +190,29 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="order.broadcast"/>
+                <action android:name="order.broadcast" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".SaveDataActivity">
-        </activity>
-        <activity android:name=".HttpActivity">
-        </activity>
-        <activity android:name=".AsyncTaskActivity">
-        </activity>
-        <activity android:name=".ServiceActivity">
-        </activity>
+        <activity android:name=".SaveDataActivity"></activity>
+        <activity android:name=".HttpActivity"></activity>
+        <activity android:name=".AsyncTaskActivity"></activity>
+        <activity android:name=".ServiceActivity"></activity>
 
         <service
             android:name="com.sun.myclass.MyService"
             android:enabled="true"
-            android:exported="true">
-        </service>
+            android:exported="true"></service>
 
-        <activity android:name=".DownloadServiceActivity">
-        </activity>
+        <activity android:name=".DownloadServiceActivity"></activity>
 
         <service
             android:name="com.sun.myclass.DownloadService"
             android:enabled="true"
-            android:exported="true">
-        </service>
+            android:exported="true"></service>
 
-        <activity android:name=".RxActivity">
-        </activity>
+        <activity android:name=".RxActivity"></activity>
+        <activity android:name=".FlowLayoutActivity"></activity>
     </application>
 
 </manifest>

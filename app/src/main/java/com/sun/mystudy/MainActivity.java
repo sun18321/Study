@@ -173,6 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.service).setOnClickListener(this);
         findViewById(R.id.down_service).setOnClickListener(this);
         findViewById(R.id.rx).setOnClickListener(this);
+        findViewById(R.id.flowlayout).setOnClickListener(this);
 
 //        findViewById(R.id.layout).setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -427,6 +428,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.rx:
                 studyStartActivity(RxActivity.class);
+                break;
+            case R.id.flowlayout:
+                studyStartActivity(FlowLayoutActivity.class);
                 break;
         }
     }
