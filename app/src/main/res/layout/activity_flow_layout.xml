@@ -7,75 +7,106 @@
     tools:context=".FlowLayoutActivity">
 
     <com.sun.design.FlowLayout
+        android:id="@+id/flow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:text="one"
-            android:padding="10dp"
-            android:background="@drawable/bg_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="four"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="five"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="six"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="seven"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="eight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="nine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="ten"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="eleven"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="twelve"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="thirteen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="fourteen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="fifteen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="sixteen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <!--<TextView-->
+            <!--android:text="是不是越长越好"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="two"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="three"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="four"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="five"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="six"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="seven"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="eight"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="nine"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="ten"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="eleven"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="twelve"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="thirteen"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="fourteen"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="fifteen"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:text="sixteen"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/bg_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
 
 
     </com.sun.design.FlowLayout>
