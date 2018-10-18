@@ -3,6 +3,7 @@ package com.sun.mystudy;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -22,6 +23,8 @@ public class FlowLayoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_flow_layout);
 
         FlowLayout flowLayout = (FlowLayout) findViewById(R.id.flow);
+
+
         for (int i = 0; i < data_string.length; i++) {
             TextView textView = new TextView(this);
             textView.setText(data_string[i]);
@@ -50,5 +53,10 @@ public class FlowLayoutActivity extends AppCompatActivity {
 
             flowLayout.addView(textView, marginParams);
         }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
 }

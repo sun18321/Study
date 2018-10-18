@@ -41,51 +41,51 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RefreshActivity"></activity>
-        <activity android:name=".RequestActivity"></activity>
-        <activity android:name=".TestActivity"></activity>
-        <activity android:name=".ScrollviewAndListviewActivity"></activity>
-        <activity android:name=".CommonListviewActivity"></activity>
-        <activity android:name=".ListViewItemClick"></activity>
-        <activity android:name=".ListViewPageActivity"></activity>
-        <activity android:name=".PopupWindowActivity"></activity>
-        <activity android:name=".CommonRadiobuttonActivity"></activity>
-        <activity android:name=".EmptyRadiobuttonActivity"></activity>
+        <activity android:name=".RefreshActivity" />
+        <activity android:name=".RequestActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".ScrollviewAndListviewActivity" />
+        <activity android:name=".CommonListviewActivity" />
+        <activity android:name=".ListViewItemClick" />
+        <activity android:name=".ListViewPageActivity" />
+        <activity android:name=".PopupWindowActivity" />
+        <activity android:name=".CommonRadiobuttonActivity" />
+        <activity android:name=".EmptyRadiobuttonActivity" />
 
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="zLxbP56tNfd6PRoGTAkXWVxl97ODFgjY" />
         //key:开发者申请的Key
-        <activity android:name=".SpinnerActivity"></activity>
-        <activity android:name=".RecyclerviewActivity"></activity>
-        <activity android:name=".ScreenClickActivity"></activity>
-        <activity android:name=".ListviewManyItemActivity"></activity>
-        <activity android:name=".RecyclerviewManyItemActivity"></activity>
-        <activity android:name=".GalleryActivity"></activity>
-        <activity android:name=".ListviewLoadActivity"></activity>
-        <activity android:name=".RecyclerviewLoadActivity"></activity>
-        <activity android:name=".WeatherActivity"></activity>
+        <activity android:name=".SpinnerActivity" />
+        <activity android:name=".RecyclerviewActivity" />
+        <activity android:name=".ScreenClickActivity" />
+        <activity android:name=".ListviewManyItemActivity" />
+        <activity android:name=".RecyclerviewManyItemActivity" />
+        <activity android:name=".GalleryActivity" />
+        <activity android:name=".ListviewLoadActivity" />
+        <activity android:name=".RecyclerviewLoadActivity" />
+        <activity android:name=".WeatherActivity" />
         <activity
             android:name=".SoftKeyActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan"></activity>
+            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan" />
         <activity
             android:name=".GiftActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name="com.sun.anim.MyAnimationActivity"></activity>
-        <activity android:name=".ChronometerActivity"></activity>
-        <activity android:name="com.sun.dialog.DialogActivity"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.sun.anim.MyAnimationActivity" />
+        <activity android:name=".ChronometerActivity" />
+        <activity android:name="com.sun.dialog.DialogActivity" />
         <activity
             android:name=".DialogFragmentActivity"
-            android:theme="@style/NoTitle"></activity>
-        <activity android:name=".DialogActivity"></activity>
-        <activity android:name=".UpdateAppActivity"></activity>
-        <activity android:name=".WorkUpdateActivity"></activity>
-        <activity android:name=".ProgressActivity"></activity>
+            android:theme="@style/NoTitle" />
+        <activity android:name=".DialogActivity" />
+        <activity android:name=".UpdateAppActivity" />
+        <activity android:name=".WorkUpdateActivity" />
+        <activity android:name=".ProgressActivity" />
 
         <receiver android:name=".UpdateBroadcastReceiver">
             <intent-filter>
@@ -93,28 +93,28 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".CustomDownloadActivity"></activity>
-        <activity android:name=".UploadPictureActivity"></activity>
-        <activity android:name=".SocketActivity"></activity>
-        <activity android:name=".NewSocketActivity"></activity>
+        <activity android:name=".CustomDownloadActivity" />
+        <activity android:name=".UploadPictureActivity" />
+        <activity android:name=".SocketActivity" />
+        <activity android:name=".NewSocketActivity" />
         <activity
             android:name=".WebviewActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".JsonActivity"></activity>
-        <activity android:name=".CaptureScreenActivity"></activity>
-        <activity android:name="com.sun.example.MediaProjectionDemo"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".JsonActivity" />
+        <activity android:name=".CaptureScreenActivity" />
+        <activity android:name="com.sun.example.MediaProjectionDemo" />
         <activity
             android:name=".AddviewActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".LayoutActivity"></activity>
-        <activity android:name=".GifActivity"></activity>
-        <activity android:name=".GameAnimActivity"></activity>
-        <activity android:name=".ExampleActivity"></activity>
-        <activity android:name=".TestAnimActivity"></activity>
-        <activity android:name=".SocketBreakActivity"></activity>
-        <activity android:name=".LogActivity"></activity>
-        <activity android:name=".QQLoginActivity"></activity>
-        <activity android:name=".WechatLoginActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LayoutActivity" />
+        <activity android:name=".GifActivity" />
+        <activity android:name=".GameAnimActivity" />
+        <activity android:name=".ExampleActivity" />
+        <activity android:name=".TestAnimActivity" />
+        <activity android:name=".SocketBreakActivity" />
+        <activity android:name=".LogActivity" />
+        <activity android:name=".QQLoginActivity" />
+        <activity android:name=".WechatLoginActivity" />
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
@@ -133,47 +133,47 @@
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="behind"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".BindActivity"></activity>
-        <activity android:name=".EditActivity"></activity>
-        <activity android:name=".SoundActivity"></activity>
-        <activity android:name=".RatingActivity"></activity>
-        <activity android:name=".BoxActivity"></activity>
-        <activity android:name=".MyFiveActivity"></activity>
+        <activity android:name=".BindActivity" />
+        <activity android:name=".EditActivity" />
+        <activity android:name=".SoundActivity" />
+        <activity android:name=".RatingActivity" />
+        <activity android:name=".BoxActivity" />
+        <activity android:name=".MyFiveActivity" />
         <activity
             android:name=".PopAnimActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DeepAnimationActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".InputKeyActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".AdvertiseActivity"></activity>
-        <activity android:name=".NewAdvertiseActivity"></activity>
-        <activity android:name=".BroadcastReceiverActivity"></activity>
-        <activity android:name=".CardviewActivity"></activity>
-        <activity android:name=".SanguoActivity"></activity>
-        <activity android:name=".CacheActivity"></activity>
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".AdvertiseActivity" />
+        <activity android:name=".NewAdvertiseActivity" />
+        <activity android:name=".BroadcastReceiverActivity" />
+        <activity android:name=".CardviewActivity" />
+        <activity android:name=".SanguoActivity" />
+        <activity android:name=".CacheActivity" />
 
         <meta-data
             android:name="my_channel"
             android:value="${channel_value}" />
 
-        <activity android:name=".CompanyActivity"></activity>
-        <activity android:name=".InterfaceActivity"></activity>
-        <activity android:name=".DispatchActivity"></activity>
-        <activity android:name=".AnimListenerActivity"></activity>
+        <activity android:name=".CompanyActivity" />
+        <activity android:name=".InterfaceActivity" />
+        <activity android:name=".DispatchActivity" />
+        <activity android:name=".AnimListenerActivity" />
         <activity
             android:name=".NewRefreshActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".QiuniuActivity"
-            android:theme="@style/AppThemeFullscreen"></activity>
-        <activity android:name=".NewChatActivity"></activity>
-        <activity android:name=".LibgdxActivity"></activity>
-        <activity android:name=".CopyGdxActivity"></activity>
-        <activity android:name=".CameraActivity"></activity>
+            android:theme="@style/AppThemeFullscreen" />
+        <activity android:name=".NewChatActivity" />
+        <activity android:name=".LibgdxActivity" />
+        <activity android:name=".CopyGdxActivity" />
+        <activity android:name=".CameraActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -194,25 +194,27 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".SaveDataActivity"></activity>
-        <activity android:name=".HttpActivity"></activity>
-        <activity android:name=".AsyncTaskActivity"></activity>
-        <activity android:name=".ServiceActivity"></activity>
+        <activity android:name=".SaveDataActivity" />
+        <activity android:name=".HttpActivity" />
+        <activity android:name=".AsyncTaskActivity" />
+        <activity android:name=".ServiceActivity" />
 
         <service
             android:name="com.sun.myclass.MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
-        <activity android:name=".DownloadServiceActivity"></activity>
+        <activity android:name=".DownloadServiceActivity" />
 
         <service
             android:name="com.sun.myclass.DownloadService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
-        <activity android:name=".RxActivity"></activity>
-        <activity android:name=".FlowLayoutActivity"></activity>
+        <activity android:name=".RxActivity" />
+        <activity android:name=".FlowLayoutActivity" />
+        <activity android:name=".DesignActivity" />
+        <activity android:name=".CountDownActivity"></activity>
     </application>
 
 </manifest>

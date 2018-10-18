@@ -14,12 +14,8 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        init();
     }
 
-    private void init() {
-        DiamondBean diamondBean = new DiamondBean();
-        List<DiamondBean.CoinsBean> coins = diamondBean.getCoins();
 
-    }
+
 }

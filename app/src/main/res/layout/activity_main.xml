@@ -741,6 +741,8 @@
                     />
 
                 <Button
+                    android:id="@+id/design"
+                    android:text="design"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
