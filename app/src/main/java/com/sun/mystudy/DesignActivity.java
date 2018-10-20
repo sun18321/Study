@@ -15,6 +15,10 @@ public class DesignActivity extends AppCompatActivity {
 
     @BindView(R.id.countdown)
     Button mCountdown;
+    @BindView(R.id.six)
+    Button mSix;
+    @BindView(R.id.click)
+    Button mClick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +27,17 @@ public class DesignActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.countdown})
+    @OnClick({R.id.countdown, R.id.six, R.id.click})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.countdown:
                 startActivity(new Intent(this, CountDownActivity.class));
+                break;
+            case R.id.six:
+                startActivity(new Intent(this, SixAngleActivity.class));
+                break;
+            case R.id.click:
+                startActivity(new Intent(this, ClickDrawActivity.class));
                 break;
         }
     }

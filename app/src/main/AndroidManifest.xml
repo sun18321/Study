@@ -214,7 +214,11 @@
         <activity android:name=".RxActivity" />
         <activity android:name=".FlowLayoutActivity" />
         <activity android:name=".DesignActivity" />
-        <activity android:name=".CountDownActivity"></activity>
+        <activity android:name=".CountDownActivity" />
+        <activity
+            android:name=".SixAngleActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ClickDrawActivity"></activity>
     </application>
 
 </manifest>

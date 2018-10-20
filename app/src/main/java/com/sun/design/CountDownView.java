@@ -112,6 +112,4 @@ public class CountDownView extends View {
         });
         animator.start();
     }
-
-
 }
