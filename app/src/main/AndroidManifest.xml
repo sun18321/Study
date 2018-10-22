@@ -217,8 +217,12 @@
         <activity android:name=".CountDownActivity" />
         <activity
             android:name=".SixAngleActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ClickDrawActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ClickDrawActivity" />
+        <activity android:name=".StockActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+        </activity>
     </application>
 
 </manifest>

@@ -19,15 +19,18 @@ public class DesignActivity extends AppCompatActivity {
     Button mSix;
     @BindView(R.id.click)
     Button mClick;
+    @BindView(R.id.stock)
+    Button mStock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_design);
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.countdown, R.id.six, R.id.click})
+    @OnClick({R.id.countdown, R.id.six, R.id.click, R.id.stock})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.countdown:
@@ -38,6 +41,9 @@ public class DesignActivity extends AppCompatActivity {
                 break;
             case R.id.click:
                 startActivity(new Intent(this, ClickDrawActivity.class));
+                break;
+            case R.id.stock:
+                startActivity(new Intent(this, StockActivity.class));
                 break;
         }
     }
