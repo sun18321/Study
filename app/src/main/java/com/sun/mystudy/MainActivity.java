@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.sun.anim.MyAnimationActivity;
 import com.sun.dialog.DialogActivity;
 import com.sun.example.MediaProjectionDemo;
+import com.sun.mvp.view.GuideActivity;
 import com.sun.sql.Car;
 import com.sun.sql.Person;
 import com.sun.util.Utils;
@@ -175,6 +176,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.rx).setOnClickListener(this);
         findViewById(R.id.flowlayout).setOnClickListener(this);
         findViewById(R.id.design).setOnClickListener(this);
+        findViewById(R.id.mvp).setOnClickListener(this);
 
 //        findViewById(R.id.layout).setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -435,6 +437,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.design:
                 studyStartActivity(DesignActivity.class);
+                break;
+            case R.id.mvp:
+                studyStartActivity(GuideActivity.class);
                 break;
         }
     }

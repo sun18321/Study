@@ -19,6 +19,7 @@ public class TestAnimActivity extends AppCompatActivity {
     private Button mBtn_trany;
     private ObjectAnimator mTranslateY;
     private Button mBtn_single_tran;
+    private ImageView mRotate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,12 @@ public class TestAnimActivity extends AppCompatActivity {
     }
 
     private void init() {
+        mRotate = (ImageView) findViewById(R.id.rotate);
+        ObjectAnimator anim = ObjectAnimator.ofFloat(mRotate, "rotation", 720, 0);
+        anim.setDuration(1000);
+        anim.setRepeatCount(ValueAnimator.INFINITE);
+        anim.start();
+
         mIv_anim = (ImageView) findViewById(R.id.iv);
         mBtn_scale = (Button) findViewById(R.id.btn_scale);
         mBtn_scale_back = (Button) findViewById(R.id.btn_scale_back);

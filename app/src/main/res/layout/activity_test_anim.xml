@@ -20,6 +20,13 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/rotate"
+        android:src="@mipmap/jz_1"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <LinearLayout
         android:layout_alignParentBottom="true"
         android:orientation="vertical"

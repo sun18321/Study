@@ -7,6 +7,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.sun.http.NetService;
+import com.sun.http.TranslateLogin;
+import com.sun.http.TranslateRegister;
+
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
@@ -25,6 +29,7 @@ import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -32,6 +37,9 @@ import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RxActivity extends AppCompatActivity {
 
@@ -51,6 +59,10 @@ public class RxActivity extends AppCompatActivity {
     Button mFlowable;
     @BindView(R.id.read)
     Button mRead;
+    @BindView(R.id.order)
+    Button mOrder;
+    @BindView(R.id.nest)
+    Button mNest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +71,8 @@ public class RxActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.main2main, R.id.son2main, R.id.operation, R.id.zip, R.id.flowable, R.id.read})
+    @OnClick({R.id.main2main, R.id.son2main, R.id.operation, R.id.zip, R.id.flowable, R.id.read
+            , R.id.order, R.id.nest})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.main2main:
@@ -80,7 +93,134 @@ public class RxActivity extends AppCompatActivity {
             case R.id.read:
 
                 break;
+            case R.id.order:
+                order();
+                break;
+            case R.id.nest:
+                nest();
+                break;
         }
+    }
+
+    private void nest() {
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://fy.iciba.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+
+        NetService netService = retrofit.create(NetService.class);
+        Observable<TranslateRegister> register = netService.getRegister();
+        final Observable<TranslateLogin> login = netService.getLogin();
+
+        register.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .doOnNext(new Consumer<TranslateRegister>() {
+                    @Override
+                    public void accept(TranslateRegister translateRegister) throws Exception {
+                        Log.d(LOG_RX, "register:" + translateRegister.getStatus() + " content from:" + translateRegister.getContent().getFrom());
+                    }
+                }).observeOn(Schedulers.io())
+                .flatMap(new Function<TranslateRegister, ObservableSource<TranslateLogin>>() {
+                    @Override
+                    public ObservableSource<TranslateLogin> apply(TranslateRegister translateRegister) throws Exception {
+                        return login;
+                    }
+                }).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<TranslateLogin>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(TranslateLogin translateLogin) {
+                        Log.d(LOG_RX, "login:" + translateLogin.getStatus() + " content from:" + translateLogin.getContent().getFrom());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+
+    private void order() {
+
+//        Observable.create(new ObservableOnSubscribe<String>() {
+//            @Override
+//            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+//                Log.d(LOG_RX, "emitter one");
+//                emitter.onNext("one");
+//                Log.d(LOG_RX, "emitter two");
+//                emitter.onNext("two");
+//                Log.d(LOG_RX, "emitter three");
+//                emitter.onNext("three");
+//                emitter.onComplete();
+//            }
+//        }).subscribe(new Observer<String>() {
+//            @Override
+//            public void onSubscribe(Disposable d) {
+//
+//            }
+//
+//            @Override
+//            public void onNext(String s) {
+//                Log.d(LOG_RX, "onNext:" + s);
+//            }
+//
+//            @Override
+//            public void onError(Throwable e) {
+//
+//            }
+//
+//            @Override
+//            public void onComplete() {
+//                Log.d(LOG_RX, "complete");
+//            }
+//        });
+
+        Flowable.create(new FlowableOnSubscribe<String>() {
+            @Override
+            public void subscribe(FlowableEmitter<String> emitter) throws Exception {
+
+                Log.d(LOG_RX, "emitter one");
+                emitter.onNext("one");
+                Log.d(LOG_RX, "emitter two");
+                emitter.onNext("two");
+                Log.d(LOG_RX, "emitter three");
+                emitter.onNext("three");
+                emitter.onComplete();
+
+            }
+        }, BackpressureStrategy.ERROR).subscribe(new Subscriber<String>() {
+            @Override
+            public void onSubscribe(Subscription s) {
+                Log.d(LOG_RX, "max:" + Long.MAX_VALUE);
+                s.request(Long.MAX_VALUE);
+            }
+
+            @Override
+            public void onNext(String s) {
+                Log.d(LOG_RX, "flow onNext:" + s);
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                Log.d(LOG_RX, "flow complete");
+            }
+        });
+
+
     }
 
     private void readText() {
@@ -357,5 +497,35 @@ public class RxActivity extends AppCompatActivity {
 
     private void logAndThread(int i) {
         Log.d(LOG_RX, "num:" + i + "--Thread:" + Thread.currentThread().getName());
+    }
+
+    private void map() {
+        Observable.just("just").map(new Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) throws Exception {
+                return s.length();
+            }
+        }).subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
     }
 }

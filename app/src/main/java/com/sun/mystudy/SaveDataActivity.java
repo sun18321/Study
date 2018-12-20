@@ -134,8 +134,6 @@ public class SaveDataActivity extends AppCompatActivity {
             public void onClick(View v) {
                 MySqlBase mySqlBase = new MySqlBase(SaveDataActivity.this, "BookStore.db", null, 3);
                 SQLiteDatabase db = mySqlBase.getWritableDatabase();
-
-
             }
         });
     }

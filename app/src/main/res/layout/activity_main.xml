@@ -140,6 +140,18 @@
                     android:layout_height="wrap_content"
                     android:text="gallery"/>
 
+                <Button
+                    android:id="@+id/glide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="glide"/>
+
+                <Button
+                    android:id="@+id/restart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="restart"/>
+
 
             </LinearLayout>
 
@@ -197,11 +209,17 @@
                     android:layout_height="wrap_content"
                     android:text="huawei_weather"/>
 
-                <!--  <Button
-           android:id="@+id/"
-           android:text="recyclerview_load"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>-->
+                <Button
+                    android:id="@+id/extend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="extend"/>
+
+                <Button
+                   android:id="@+id/retrofit"
+                   android:text="retrofit"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
 
 
             </LinearLayout>
@@ -394,6 +412,13 @@
                     android:text="gif"
                     />
 
+                <Button
+                    android:id="@+id/viewpager"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="viewpager"
+                    />
+
             </LinearLayout>
 
             <LinearLayout
@@ -522,6 +547,7 @@
                     android:text="deep"
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -537,25 +563,26 @@
 
                 <Button
                     android:id="@+id/advertise"
-                    android:text="advertise"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="advertise"
                     />
 
                 <Button
                     android:id="@+id/advertise_two"
-                    android:text="ad_new"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="ad_new"
                     />
 
                 <Button
                     android:id="@+id/broadReceiver"
-                    android:text="broad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="broad"
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -571,23 +598,23 @@
 
                 <Button
                     android:id="@+id/sanguo"
-                    android:text="sanguo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="sanguo"
                     />
 
                 <Button
                     android:id="@+id/cache"
-                    android:text="cache"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="cache"
                     />
 
                 <Button
                     android:id="@+id/company"
-                    android:text="company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="company"
                     />
             </LinearLayout>
 
@@ -612,16 +639,16 @@
 
                 <Button
                     android:id="@+id/anim_listener"
-                    android:text="anim_lis"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="anim_lis"
                     />
 
                 <Button
                     android:id="@+id/new_pull"
-                    android:text="new_pull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="new_pull"
                     />
             </LinearLayout>
 
@@ -633,32 +660,33 @@
 
                 <Button
                     android:id="@+id/qiniu"
-                    android:text="qiniu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="qiniu"
                     />
 
                 <Button
                     android:id="@+id/new_chat"
-                    android:text="newchat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="newchat"
                     />
 
                 <Button
                     android:id="@+id/lottie"
-                    android:text="lottie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="lottie"
                     />
 
                 <Button
                     android:id="@+id/libgdx"
-                    android:text="libgdx"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="libgdx"
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -667,29 +695,30 @@
 
                 <Button
                     android:id="@+id/copy_gdx"
-                    android:text="copy_gdx"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="copy_gdx"
                     />
 
                 <Button
                     android:id="@+id/camera"
-                    android:text="camera"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="camera"
                     />
+
                 <Button
                     android:id="@+id/save_data"
-                    android:text="save_data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="save_data"
                     />
 
                 <Button
                     android:id="@+id/http"
-                    android:text="http"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="http"
                     />
             </LinearLayout>
 
@@ -701,30 +730,46 @@
 
                 <Button
                     android:id="@+id/asynctask"
-                    android:text="asynctask"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="asynctask"
                     />
 
                 <Button
                     android:id="@+id/service"
-                    android:text="service"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="service"
                     />
+
                 <Button
                     android:id="@+id/down_service"
-                    android:text="d_service"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="d_service"
                     />
 
                 <Button
                     android:id="@+id/rx"
-                    android:text="rx"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="rx"
                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/floating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="floating"
+                    />
+
             </LinearLayout>
 
             <LinearLayout
@@ -747,6 +792,8 @@
                     android:layout_height="wrap_content"
                     />
                 <Button
+                    android:id="@+id/mvp"
+                    android:text="mvp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />

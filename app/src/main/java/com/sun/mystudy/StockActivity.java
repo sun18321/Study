@@ -38,7 +38,7 @@ public class StockActivity extends AppCompatActivity {
             case R.id.stockview:
                 break;
             case R.id.draw:
-                mStockview.doDraw();
+//                mStockview.doDraw();
                 break;
         }
     }

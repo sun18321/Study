@@ -28,6 +28,9 @@ public class NewRefreshActivity extends AppCompatActivity implements BottomNavig
     private HashMap<Integer, Fragment> mMap = new HashMap<>();
     private HashMap<Integer, String> mTitleMap = new HashMap<>();
     private Toolbar mToolbar;
+    private final String TAG_FIRST = "first";
+    private final String TAG_SECOND = "second";
+    private final String TAG_THIRD = "third";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +62,17 @@ public class NewRefreshActivity extends AppCompatActivity implements BottomNavig
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.fram, mMap.get(item.getItemId())).commit();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.fram, mMap.get(item.getItemId())).commit();
+        
+        
+        
+        
+        
         mToolbar.setTitle(mTitleMap.get(item.getItemId()));
         return true;
 
     }
 
+//    private boolean isAdded(String tag) {
+////    }
 }
